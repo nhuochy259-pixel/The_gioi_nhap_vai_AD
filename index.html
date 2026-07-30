@@ -1,0 +1,3494 @@
+====================================================================
+MODULE_01 :: SYSTEM_PROMPT
+====================================================================
+
+ROLE:
+  ACT_AS:
+    - Product Manager
+    - System Architect
+    - UI/UX Designer
+    - Front-end Developer
+    - Back-end Developer
+    - Database Architect
+    - Security Engineer
+    - QA Engineer
+    - SEO Specialist
+  NOTE: Think as a complete professional software development team.
+
+OBJECTIVE:
+  TASK: Analyze all following Modules and build the complete website "Thế giới nhập vai_AD".
+  DEFINE:
+    PLATFORM: Community platform for Google AI Studio users
+    PLATFORM_FEATURES:
+      - Creators share Character, Prompt, and Roleplay resources
+      - Users explore, save, follow, rate, and interact with content
+  RULE: Treat all Modules as the official specification document.
+  FORBIDDEN: Treat this as "just a prompt".
+  RULE: Every Module is a mandatory part of the system.
+  FORBIDDEN: Skip any Module.
+
+OUTPUT:
+  FORBIDDEN_RESULT_TYPES:
+    - design draft
+    - mockup
+    - wireframe
+    - example
+    - demo
+    - prototype
+  REQUIRED_RESULT: A complete website.
+  REQUIRE (website must fully include):
+    - Interface (UI)
+    - Database
+    - API
+    - Authentication
+    - Business Logic
+    - Dashboard
+    - AI Search
+    - Responsive
+    - Dark Mode
+    - Security
+    - SEO
+    - Performance
+  FORBIDDEN: Omit any of the above components.
+
+WORKFLOW: EXECUTION_PRINCIPLES
+  STEP 1: Read everything before starting.
+  STEP 2: Analyze relationships between Modules.
+  STEP 3: Verify data.
+  STEP 4: Verify consistency.
+  STEP 5: Only begin building once the whole spec is understood.
+  FORBIDDEN: Build individual parts in isolation without considering the whole system.
+
+WORKFLOW: REASONING_PRINCIPLES
+  FORBIDDEN: Self-speculate / guess.
+  IF: A Module already defines something
+    THEN: Must use it exactly as defined.
+  IF: Multiple Modules are related
+    THEN: Must combine all of them.
+  IF: Conflict exists
+    THEN: PRIORITY:
+      1. More specific Module.
+      2. Rule with higher priority level.
+      3. More recent requirement.
+  FORBIDDEN: Arbitrarily choose an alternative approach.
+
+FORBIDDEN: GLOBAL_PROHIBITIONS
+  - Skip a Module
+  - Shorten/reduce requirements
+  - Change functionality
+  - Rename functionality
+  - Change data
+  - Change colors
+  - Change user flow
+  - Remove a data field
+  - Add a data field not already defined
+  - Add a core feature on your own
+  - Remove a feature on your own
+
+REQUIRE: QUALITY_REQUIREMENTS
+  WEBSITE_MUST_BE:
+    - modern
+    - beautiful
+    - easy to use
+    - consistent
+    - fast loading
+    - mobile-first optimized
+    - responsive
+    - easy to extend
+    - easy to maintain
+  FORBIDDEN: Sacrifice user experience to reduce workload.
+
+REQUIRE: TECHNICAL_REQUIREMENTS
+  EVERY_FUNCTION_MUST_HAVE:
+    - Validation
+    - Error Handling
+    - Empty State
+    - Loading State
+    - Success State
+    - Permission Checking
+  FORBIDDEN: Skip any of the above.
+
+WORKFLOW: SELF_CHECK (after completing each Module)
+  STEP 1: Check — is any function missing?
+  STEP 2: Check — is any data missing?
+  STEP 3: Check — is there a conflict?
+  STEP 4: Check — can it be optimized further?
+  STEP 5: Check — does it violate a previous Module?
+  IF: An error is found
+    THEN: Fix it first, then continue.
+  FORBIDDEN: Ignore an error.
+
+VALIDATION: FINAL_RESULT
+  RULE: Website must satisfy 100% of all Modules.
+  IF: Any requirement remains incomplete
+    THEN: Project is NOT considered complete.
+  WORKFLOW: Continue execution until all requirements are fully satisfied.
+
+END
+
+
+====================================================================
+MODULE_02 :: GLOBAL_CONFIGURATION
+====================================================================
+
+RULE: All following Modules must use the configuration defined in this Module.
+FORBIDDEN: Arbitrarily change or override without a new requirement.
+
+SECTION I :: WEBSITE_INFO
+  VARIABLE WEBSITE_NAME = "Thế giới nhập vai_AD"
+  VARIABLE WEBSITE_SLOGAN = "Khởi đầu cho mọi hành trình Roleplay."
+  VARIABLE WEBSITE_TYPE = "Nền tảng cộng đồng Roleplay dành cho Google AI Studio"
+  VARIABLE WEBSITE_LANGUAGE = "Tiếng Việt"
+  VARIABLE DEFAULT_TIMEZONE = "Asia/Ho_Chi_Minh"
+
+SECTION II :: WEBSITE_OBJECTIVE
+  OBJECTIVE: Become the central community hub for Google AI Studio.
+  CORE_FEATURES:
+    - Character management
+    - Prompt management
+    - Creator profile
+    - AI Search
+    - Feedback
+    - Follow Creator
+    - Bookmark
+    - Comment
+    - Notification
+    - Knowledge center
+    - Personal collection
+
+SECTION III :: TARGET_USERS
+  SERVES:
+    - Newcomers
+    - Roleplay enthusiasts
+    - Creators
+    - Prompt writers
+    - Google AI Studio users
+  RULE: No age restriction.
+  RULE: No country restriction.
+
+SECTION IV :: UI
+  STYLE:
+    - modern
+    - simple
+    - tech-oriented
+    - professional
+    - premium
+  FORBIDDEN: Cluttered / visually busy design.
+  DEFINE PRIMARY_COLORS: Black, White, Gray.
+  REQUIRE:
+    - Dark Mode support
+    - Light Mode support
+  RULE: Prioritize Dark Mode when the user's device has dark mode enabled.
+  DESIGN: Mobile First, Responsive, consistent across the entire website.
+
+SECTION V :: LOGIN_SYSTEM
+  SUPPORTED: Google Sign-in ONLY.
+  FORBIDDEN:
+    - Manual registration
+    - Email login
+    - Facebook login
+    - Discord login
+  FORBIDDEN:
+    - Email verification
+    - Two-factor authentication (2FA)
+
+SECTION VI :: SYSTEM_ROLES
+  DEFINE ROLES: USER, CREATOR, ADMIN
+  RULE: No other role exists.
+  NOTE: See Module 04 — Creator is later redefined there as a STATUS, not a Role (Module 02 lists it here as one of three role-level concepts; Module 04 is the authoritative, more specific definition and takes priority per Module 01 conflict-resolution rule).
+
+SECTION VII :: CHARACTER_CONFIGURATION
+  LIMIT MAX_PINNED_CHARACTER = 3 (per Creator)
+  RULE: A Character always belongs to exactly one Creator.
+  REQUIRE CHARACTER_LINK_PROVIDER = Google AI Studio (mandatory)
+
+SECTION VIII :: PROMPT_CONFIGURATION
+  ALLOW: Creator may pin Prompt.
+  REQUIRE PROMPT_FEATURES:
+    - Quick copy
+    - Copy count tracking
+
+SECTION IX :: FEEDBACK
+  DEFINE MODES: PRIVATE, PUBLIC
+  IF: mode = PRIVATE
+    THEN: Only sender and recipient can view.
+  IF: mode = PUBLIC
+    THEN: Displayed as a community post.
+
+SECTION X :: AI_SEARCH
+  REQUIRE:
+    - Understand natural language.
+    - Understand approximate keywords.
+    - Automatically find matching Character.
+  FORBIDDEN: Generate results that do not exist.
+
+SECTION XI :: TAG
+  RULE: Everyone can create Tags.
+  RULE: Tag is case-insensitive.
+  RULE: Tag name must not duplicate.
+
+SECTION XII :: NOTIFICATION
+  TRIGGER_ON:
+    - New Feedback received.
+    - New Character from a followed Creator.
+    - New Prompt from a followed Creator.
+
+SECTION XIII :: SECURITY
+  REQUIRE:
+    - CAPTCHA
+    - Activity Log
+    - Permission Checking
+    - Validation
+
+SECTION XIV :: SYSTEM_PAGES
+  PAGES:
+    - Welcome
+    - Trang chủ (Home)
+    - Khám phá (Explore)
+    - Character
+    - Prompt
+    - Creator
+    - Feedback
+    - Hồ sơ (Profile)
+    - Cài đặt (Settings)
+    - Thông báo (Notifications)
+    - Liên hệ (Contact)
+
+SECTION XV :: GLOBAL_PRINCIPLES
+  FORBIDDEN: The following Modules change:
+    - Website name
+    - Slogan
+    - Roles
+    - Primary colors
+    - Login flow
+    - Feedback types
+    - Character rules
+    - Prompt rules
+  IF: A change is needed
+    THEN: Only edit at Module 02; all other Modules must auto-inherit the change.
+
+SECTION XVI :: SYSTEM_CONSTANTS
+  VARIABLE MAX_PINNED_CHARACTER = 3
+  VARIABLE CHARACTER_LINK_PROVIDER = GOOGLE_AI_STUDIO
+  VARIABLE LOGIN_PROVIDER = GOOGLE
+  VARIABLE DEFAULT_LANGUAGE = VIETNAMESE
+  VARIABLE ENABLE_AI_SEARCH = TRUE
+  VARIABLE ENABLE_DARK_MODE = TRUE
+  VARIABLE ENABLE_LIGHT_MODE = TRUE
+  VARIABLE ENABLE_ACTIVITY_LOG = TRUE
+  VARIABLE ENABLE_CAPTCHA = TRUE
+  VARIABLE ENABLE_BOOKMARK = TRUE
+  VARIABLE ENABLE_FOLLOW = TRUE
+  VARIABLE ENABLE_NOTIFICATION = TRUE
+  VARIABLE ENABLE_COMMENT_REPLY = TRUE
+  VARIABLE ENABLE_COMMENT_REACTION = TRUE
+  VARIABLE ENABLE_PROMPT_COPY_COUNTER = TRUE
+
+END
+
+
+====================================================================
+MODULE_03 :: WELCOME
+====================================================================
+
+DEFINE: The first screen shown when a user accesses the website.
+DEFINE: An introductory screen orienting the user before entering the system.
+
+SECTION I :: PURPOSE
+  REQUIRE:
+    - Welcome the user.
+    - Briefly introduce the website.
+    - Convey the brand correctly.
+    - Encourage the user to start exploring.
+  RULE: This is the first screen shown on website access.
+
+SECTION II :: LAYOUT
+  COMPONENTS (in order):
+    1. Logo
+    2. Website name
+    3. Slogan
+    4. Short description
+    5. "Bắt đầu" (Start) button
+    6. "Đăng nhập bằng Google" (Sign in with Google) button
+    7. Dark Mode / Light Mode toggle
+    8. Footer
+  STYLE: Minimal, modern, experience-focused.
+
+SECTION III :: DISPLAYED_INFO
+  WEBSITE_NAME: "Thế giới nhập vai_AD"
+  SLOGAN: "Khởi đầu cho mọi hành trình Roleplay."
+  DESCRIPTION: "Nền tảng cộng đồng dành cho Google AI Studio, nơi bạn có thể khám phá, chia sẻ Character, Prompt, Creator và các tài nguyên hữu ích cho Roleplay."
+
+SECTION IV :: START_BUTTON
+  ACTION: Primary action.
+  IF: user NOT logged in
+    THEN: navigate to /home
+  IF: user logged in
+    THEN: navigate to /home
+  RULE: Do not require login just to explore public content.
+
+SECTION V :: GOOGLE_SIGNIN_BUTTON
+  REQUIRE: Display clearly.
+  REQUIRE: Use official Google branding.
+  WORKFLOW: AFTER_SUCCESSFUL_LOGIN
+    IF: a previous page exists
+      THEN: return to it.
+    IF: accessed from Welcome
+      THEN: navigate to Home.
+
+SECTION VI :: IMAGERY
+  REQUIRE: Banner (cover image) OR Hero Illustration.
+  STYLE: modern, tech, Roleplay, Google AI Studio.
+  FORBIDDEN: Visually distracting imagery.
+  REQUIRE: Optimized for both Mobile and Desktop.
+
+SECTION VII :: MOTION
+  ALLOW: Light animation only.
+  EXAMPLE:
+    - Logo fade-in appearance.
+    - Title fade-in.
+    - Button subtle float on touch.
+  FORBIDDEN: Long or distracting animations.
+
+SECTION VIII :: FOOTER
+  DISPLAY:
+    - Website name
+    - Slogan
+    - Website version
+    - Privacy policy
+    - Terms of use
+    - Contact
+    - Copyright
+
+SECTION IX :: RESPONSIVE
+  MOBILE: Vertical layout priority.
+  TABLET: Reasonable spacing adjustment.
+  DESKTOP: May split into two columns — Content | Illustration.
+
+SECTION X :: ACCESSIBILITY
+  REQUIRE:
+    - Keyboard navigable.
+    - Alt text for images.
+    - Standard-compliant contrast ratio.
+
+SECTION XI :: SPECIAL_STATES
+  IF: Banner fails to load
+    THEN: show default illustration.
+  IF: user has no network connection
+    THEN: show message: "Không thể kết nối. Vui lòng kiểm tra kết nối mạng và thử lại."
+    AND: show "Thử lại" (Retry) button.
+
+SECTION XII :: DESIGN_REQUIREMENTS
+  FIRST_IMPRESSION_MUST_BE:
+    - Professional
+    - Clean
+    - Modern
+    - Easy to understand
+    - Minimal reading required
+  RULE: Within the first 5 seconds, the user must understand:
+    - What the website is.
+    - Who it is for.
+    - What they can do.
+    - How to start.
+
+SECTION XIII :: ALLOWED_COMPONENTS
+  DEPENDS_ON:
+    - Module 02.2 (Design System)
+    - Module 02.3 (Component Library)
+    - Module 02.4 (Design Tokens)
+  FORBIDDEN: Create new components on your own.
+
+SECTION XIV :: IMPLEMENTATION_PRINCIPLES
+  FORBIDDEN:
+    - Popup shown immediately on open.
+    - Autoplay video.
+    - Autoplay audio.
+    - Advertisements.
+    - Requiring login before exploring public content.
+  REQUIRE: Welcome load time optimized for fast display on both mobile and desktop.
+
+END
+
+
+====================================================================
+MODULE_04 :: AUTHENTICATION_AND_AUTHORIZATION
+====================================================================
+
+DEFINE: The full authentication, account, and authorization system.
+
+SECTION I :: LOGIN_METHOD
+  SUPPORTED: Google Sign-in ONLY.
+  FORBIDDEN:
+    - Email + Password
+    - Facebook
+    - Discord
+    - GitHub
+    - Manual registration
+  FORBIDDEN:
+    - Email verification
+    - Two-factor authentication (2FA)
+
+SECTION II :: FIRST_LOGIN
+  IF: first-time login
+    THEN: SYSTEM_AUTO:
+      - Create account.
+      - Create personal profile.
+      - Generate unique User ID.
+      - Assign default role = USER.
+      - Set creator_status = FALSE.
+      - Record account creation time.
+      - Record first login time.
+  RULE: No additional mandatory info required at signup.
+
+SECTION III :: GOOGLE_SYNCED_DATA
+  ALLOW_SYNC:
+    - Display name
+    - Avatar
+    - Email address
+  EMAIL_USE:
+    - Account identification.
+    - Sending notifications.
+  FORBIDDEN: Display Email publicly.
+
+SECTION IV :: PROFILE_COMPLETION
+  AFTER_FIRST_LOGIN: user may:
+    - Change display name.
+    - Add Bio.
+    - Add social media links.
+    - OR skip and update later.
+
+SECTION V :: DISPLAY_NAME_VALIDATION
+  LIMIT: max 50 characters.
+  RULE: Must not fully duplicate another account's name.
+
+SECTION VI :: SESSION
+  REQUIRE:
+    - Maintain session after page reload.
+    - Do not auto-logout on refresh.
+    - End session only on explicit user logout.
+
+SECTION VII :: LOGOUT
+  WORKFLOW:
+    - Clear login session.
+    - Navigate to Welcome.
+
+SECTION VIII :: SYSTEM_ROLE
+  DEFINE ROLES: USER, ADMIN (only two)
+  FORBIDDEN: Create additional system roles without a new requirement.
+
+SECTION IX :: CREATOR_STATUS
+  DEFINE: Creator is NOT a Role. Creator is a User STATUS.
+  VARIABLE creator_status ∈ { TRUE, FALSE }
+  IF: creator_status = TRUE
+    THEN: user is considered a Creator.
+  IF: creator_status = FALSE
+    THEN: user is a regular User.
+
+SECTION X :: USER_PERMISSIONS
+  ALLOW:
+    - View Character
+    - View Prompt
+    - View Creator
+    - View public Feedback
+    - AI Search
+    - Search
+    - Comment
+    - Reply to comment
+    - React (emotion reaction)
+    - Bookmark
+    - Follow Creator
+    - Send Feedback
+    - Post Prompt
+    - Edit own Prompt
+    - Delete own Prompt
+  FORBIDDEN:
+    - Post Character
+    - Pin Character
+    - Appear in Creator list
+
+SECTION XI :: CREATOR_PERMISSIONS
+  IF: creator_status = TRUE
+    THEN: user has all User permissions, PLUS:
+      - Post Character
+      - Edit own Character
+      - Delete own Character
+      - Pin up to 3 Characters
+      - Has a Creator page
+      - Has followers
+      - Display Creator statistics
+      - Appear in Creator list
+  RETAIN: Creator can still:
+      - Post Prompt
+      - Edit Prompt
+      - Delete Prompt
+
+SECTION XII :: ADMIN_PERMISSIONS
+  RULE: Admin has full authority, including:
+    - Manage User
+    - Manage Creator
+    - Manage Character
+    - Manage Prompt
+    - Manage Feedback
+    - Manage comments
+    - Manage Tag
+    - Lock account
+    - Delete account
+    - Manage system notifications
+
+SECTION XIII :: BECOMING_A_CREATOR
+  WORKFLOW:
+    STEP 1: User submits request to become Creator.
+    STEP 2: Admin approves.
+    STEP 3: creator_status → TRUE.
+  RULE: Do not create a new account.
+  RULE: Do not change User ID.
+  RULE: All existing data must be preserved.
+
+SECTION XIV :: ACCOUNT_LOCK
+  IF: account is locked
+    THEN:
+      - Cannot log in.
+      - Cannot perform actions.
+  IF: a reason is provided
+    THEN: display the lock reason.
+
+SECTION XV :: ACTIVITY_LOG
+  LOG_EVENTS:
+    - Login
+    - Logout
+    - Account creation
+    - Display name change
+    - Became Creator
+    - Account locked
+    - Account unlocked
+
+SECTION XVI :: ERROR_HANDLING
+  IF: login fails
+    THEN:
+      - Show an easy-to-understand message.
+      - FORBIDDEN: show technical error.
+      - Allow retry.
+
+SECTION XVII :: IMPLEMENTATION_PRINCIPLES
+  RULE: Each Google Email may link to only one account.
+  FORBIDDEN: Create duplicate accounts.
+  RULE: All other Modules must use the login state and authorization defined in this Module.
+  FORBIDDEN: Create a separate/independent authorization system.
+
+END
+
+
+====================================================================
+MODULE_05 :: WEBSITE_LAYOUT
+====================================================================
+
+OBJECTIVE: Define the overall layout of the entire website.
+RULE: Every page in the system must inherit this Layout.
+FORBIDDEN: Create a different layout without a new requirement.
+
+SECTION I :: GOAL
+  PRIORITY:
+    - modern
+    - simple
+    - easy to use
+    - responsive
+    - fast loading
+    - easy to extend
+
+SECTION II :: OVERALL_LAYOUT
+  DESKTOP:
+    STRUCTURE:
+      - Header (top, full width)
+      - Sidebar (left) | Main Content (right)
+      - Footer (bottom, full width)
+  TABLET:
+    STRUCTURE (top to bottom): Header → Collapsed Sidebar → Main Content → Footer
+  MOBILE:
+    STRUCTURE (top to bottom): Header → Main Content → Bottom Navigation → Footer (condensed)
+
+SECTION III :: HEADER
+  RULE: Always visible on every page (EXCEPTION: Welcome may use its own layout).
+  CONTAINS:
+    - Logo
+    - Website name
+    - Search bar
+    - AI Search button
+    - Dark Mode / Light Mode toggle
+    - Notifications
+    - User avatar
+    - Account menu
+  REQUIRE: Sticky Header (fixed on scroll).
+
+SECTION IV :: SIDEBAR
+  DESKTOP: Always visible.
+  TABLET: Collapsible.
+  MOBILE: Hidden by default; opened via Menu button.
+  MENU_ITEMS:
+    - Trang chủ (Home)
+    - Khám phá (Explore)
+    - Character
+    - Prompt
+    - Creator
+    - Feedback
+    - Thông báo (Notifications)
+    - Hồ sơ (Profile)
+    - Cài đặt (Settings)
+    - Liên hệ (Contact)
+
+SECTION V :: MAIN_CONTENT
+  DEFINE: Primary content display area.
+  FORBIDDEN: Display Sidebar inside this area.
+  RULE: Every Module's content must render in this area.
+
+SECTION VI :: FOOTER
+  CONTAINS:
+    - Website name
+    - Slogan
+    - Version
+    - Terms of use
+    - Privacy policy
+    - Contact
+    - Copyright
+
+SECTION VII :: CONTAINER
+  RULE: Content must be centered.
+  FORBIDDEN: Stretch to full screen width on Desktop.
+  RULE: Keep side whitespace to improve readability.
+
+SECTION VIII :: RESPONSIVE
+  DESKTOP: Full display.
+  TABLET: Collapsed Sidebar, reduced spacing.
+  MOBILE: One-handed usage priority; FORBIDDEN horizontal scrollbar.
+
+SECTION IX :: SCROLL
+  RULE: Header always fixed.
+  RULE: Sidebar stays fixed in position on Desktop.
+  RULE: Main Content scrolls independently.
+
+SECTION X :: SEARCH
+  RULE: Search bar always located in Header.
+  RULE: AI Search displayed next to search bar.
+  IF: screen is small
+    THEN: AI Search collapses into an icon.
+
+SECTION XI :: NOTIFICATION
+  RULE: Always displayed in Header.
+  REQUIRE: Badge showing unread count.
+
+SECTION XII :: USER_MENU
+  ON_CLICK(Avatar): DISPLAY:
+    - Hồ sơ (Profile)
+    - Character của tôi (My Characters)
+    - Prompt của tôi (My Prompts)
+    - Character đã lưu (Saved Characters)
+    - Prompt đã lưu (Saved Prompts)
+    - Creator đang theo dõi (Followed Creators)
+    - Cài đặt (Settings)
+    - Đăng xuất (Logout)
+
+SECTION XIII :: EMPTY_STATE
+  IF: page has no data
+    THEN: DISPLAY:
+      - Illustration
+      - Title
+      - Description
+      - Appropriate action button
+
+SECTION XIV :: LOADING
+  WHILE: data is loading
+    THEN: show Skeleton Loading.
+  FORBIDDEN: Blank white screen.
+
+SECTION XV :: ERROR_STATE
+  IF: data load fails
+    THEN: DISPLAY:
+      - Error icon
+      - Message
+      - Retry button
+  FORBIDDEN: Show raw system error.
+
+SECTION XVI :: ACCESSIBILITY
+  REQUIRE:
+    - Keyboard navigation support.
+    - Clear focus indicator.
+    - Standard-compliant contrast ratio.
+    - Alt text for images.
+
+SECTION XVII :: PERFORMANCE
+  REQUIRE:
+    - Fast loading.
+    - Load only necessary data.
+    - Do not block UI rendering.
+    - Support Lazy Loading for long content.
+
+SECTION XVIII :: SCALABILITY
+  ALLOW addition of:
+    - New pages
+    - New menu items
+    - New Modules
+  RULE: Without needing to change the Layout architecture.
+
+SECTION XIX :: BUSINESS_RULES
+  RULE: Every page must share the same Header, Sidebar, Footer, Container.
+  FORBIDDEN: Create a separate Layout without prior definition.
+
+SECTION XX :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION (all required):
+    ✓ Responsive
+    ✓ Dark Mode
+    ✓ Sticky Header
+    ✓ Sidebar
+    ✓ Footer
+    ✓ Search
+    ✓ AI Search
+    ✓ Notification
+    ✓ User Menu
+    ✓ Empty State
+    ✓ Loading State
+    ✓ Error State
+    ✓ Accessibility
+    ✓ Performance Optimization
+    ✓ Scalability
+  RULE: Only proceed to next Modules once entire checklist passes.
+
+END
+
+
+====================================================================
+MODULE_06 :: HOME
+====================================================================
+
+OBJECTIVE: The Home page is the center of the entire website — where users quickly discover featured content and access all main areas.
+RULE: All users can access Home without logging in.
+
+SECTION I :: GOAL
+  HOME_MUST_HELP_USER:
+    - Understand what the website offers.
+    - Explore Character.
+    - Explore Prompt.
+    - Explore Creator.
+    - Follow trends.
+    - Access AI Search.
+    - Navigate quickly to other areas.
+
+SECTION II :: PAGE_LAYOUT (order)
+  STEP 1: Hero Banner
+  STEP 2: Search bar
+  STEP 3: AI Search
+  STEP 4: Featured Character
+  STEP 5: Featured Prompt
+  STEP 6: Featured Creator
+  STEP 7: New Character
+  STEP 8: New Prompt
+  STEP 9: Latest public Feedback
+  STEP 10: Trending Tags
+  STEP 11: Footer
+
+SECTION III :: HERO_BANNER
+  DISPLAY:
+    - Website name
+    - Slogan
+    - "Bắt đầu khám phá" (Start exploring) button
+    - "Đăng nhập bằng Google" button
+  OPTIONAL: Roleplay / Google AI Studio themed illustration.
+  FORBIDDEN: Autoplay video.
+
+SECTION IV :: SEARCH_BAR
+  ALLOW quick search by:
+    - Character
+    - Prompt
+    - Creator
+    - Tag
+    - Category
+  REQUIRE: AI Search button beside it.
+
+SECTION V :: FEATURED_CHARACTER
+  LIMIT: max 10 Characters displayed.
+  CARD_FIELDS:
+    - Avatar
+    - Name
+    - Creator
+    - Slogan
+    - Likes
+    - Saves
+    - Views
+  REQUIRE: "Xem tất cả" (View all) button.
+
+SECTION VI :: FEATURED_PROMPT
+  LIMIT: max 10 Prompts displayed.
+  CARD_FIELDS:
+    - Prompt name
+    - Author
+    - Purpose
+    - Copy count
+    - Bookmark
+  REQUIRE: "Sao chép Prompt" (Copy Prompt) button.
+
+SECTION VII :: FEATURED_CREATOR
+  LIMIT: max 10 Creators displayed.
+  FIELDS:
+    - Avatar
+    - Name
+    - Bio
+    - Character count
+    - Follower count
+    - Follow button
+
+SECTION VIII :: NEW_CHARACTER
+  DISPLAY: recently posted Characters.
+  SORT: Newest → Oldest.
+
+SECTION IX :: NEW_PROMPT
+  DISPLAY: recently posted Prompts.
+  SORT: Newest → Oldest.
+
+SECTION X :: PUBLIC_FEEDBACK
+  DISPLAY: recent public Feedback.
+  FORBIDDEN: Display private Feedback.
+
+SECTION XI :: TRENDING_TAGS
+  DISPLAY: most-used Tags.
+  ALLOW: Click Tag → navigate to search results page.
+
+SECTION XII :: QUICK_ACTIONS
+  IF: user logged in
+    THEN: show "Đăng Prompt" (Post Prompt).
+  IF: creator_status = TRUE
+    THEN: show "Đăng Character" (Post Character), additionally.
+
+SECTION XIII :: BUSINESS_RULES
+  - Featured content must auto-update.
+  - FORBIDDEN: Display deleted Character or Prompt.
+  - FORBIDDEN: Display content hidden by Admin.
+  - RULE: Only display public Feedback.
+
+SECTION XIV :: RESPONSIVE
+  DESKTOP: multi-column display.
+  TABLET: collapse to 2–3 columns.
+  MOBILE: single-column display.
+
+SECTION XV :: EMPTY_STATE
+  IF: a section has no data
+    THEN: DISPLAY: illustration + message "Chưa có nội dung."
+    FORBIDDEN: Show empty list with nothing.
+
+SECTION XVI :: LOADING
+  DISPLAY: Skeleton Loading.
+  RULE: Each section loads independently; do not block the whole Home page.
+
+SECTION XVII :: ERROR_STATE
+  IF: data load fails
+    THEN: DISPLAY: message + "Thử lại" (Retry) button.
+
+SECTION XVIII :: PERFORMANCE
+  REQUIRE:
+    - Fast loading.
+    - Lazy Loading for long lists.
+    - Optimized images.
+    - Load only data needed for display.
+
+SECTION XIX :: ACCESSIBILITY
+  REQUIRE:
+    - Keyboard support.
+    - Clear focus.
+    - Alt text for images.
+    - Standard-compliant contrast.
+
+SECTION XX :: ACCEPTANCE_CRITERIA
+  VALIDATION:
+    ✓ Accessible without login.
+    ✓ Sections display in correct order.
+    ✓ AI Search works.
+    ✓ Search works.
+    ✓ Featured Character displays correctly.
+    ✓ Featured Prompt displays correctly.
+    ✓ Featured Creator displays correctly.
+    ✓ Public Feedback displays correctly.
+    ✓ Responsive on Mobile, Tablet, Desktop.
+    ✓ No deleted/hidden content shown.
+
+SECTION XXI :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION:
+    ✓ Hero Banner
+    ✓ Search
+    ✓ AI Search
+    ✓ Featured Character
+    ✓ Featured Prompt
+    ✓ Featured Creator
+    ✓ Public Feedback
+    ✓ Trending Tags
+    ✓ Empty State
+    ✓ Loading State
+    ✓ Error State
+    ✓ Responsive
+    ✓ Accessibility
+    ✓ Performance
+  RULE: Module considered complete only when full checklist passes.
+
+END
+
+
+====================================================================
+MODULE_07 :: USER_PROFILE
+====================================================================
+
+OBJECTIVE: Personal profile page. User can view, edit, and manage all their own personal data.
+
+SECTION I :: GOAL
+  PROFILE_MUST_HELP_USER:
+    - Manage personal info.
+    - Manage Character.
+    - Manage Prompt.
+    - Manage Bookmark.
+    - Manage Follow.
+    - Manage posted content.
+
+SECTION II :: PROFILE_INFO_DISPLAYED
+  - Avatar
+  - Display Name
+  - Bio
+  - Creator Status
+  - Join date
+  - Character count
+  - Prompt count
+  - Saved Character count
+  - Saved Prompt count
+  - Followed Creator count
+  - Follower count (ONLY IF creator_status = TRUE)
+
+SECTION III :: AVATAR
+  ALLOW: Direct image upload.
+  LIMIT: max 10 MB.
+  FORMAT: JPG, JPEG, PNG, WEBP.
+  DISPLAY: full image.
+
+SECTION IV :: DISPLAY_NAME
+  LIMIT: max 50 characters.
+  RULE: Must not fully duplicate another account.
+
+SECTION V :: BIO
+  LIMIT: max 600 characters.
+  ALLOW: line breaks.
+  FORBIDDEN: HTML support.
+
+SECTION VI :: SOCIAL_LINKS
+  ALLOW: Facebook, Instagram, TikTok, Discord.
+  OPTIONAL: not required.
+
+SECTION VII :: CHARACTER
+  IF: creator_status = TRUE
+    THEN: DISPLAY:
+      - Posted Characters.
+      - Pinned Characters (max 3).
+    ALLOW: Edit, Delete, Pin, Unpin.
+  IF: creator_status = FALSE
+    THEN: Hide this section.
+
+SECTION VIII :: PROMPT
+  DISPLAY: user's Prompts.
+  ALLOW: Edit, Delete, Pin Prompt, Unpin Prompt.
+
+SECTION IX :: BOOKMARK
+  DISPLAY: Saved Characters, Saved Prompts.
+  ALLOW: Unsave, Quick open.
+
+SECTION X :: FOLLOW
+  DISPLAY: list of followed Creators.
+  ALLOW: Unfollow, Quick access to Creator page.
+
+SECTION XI :: PROFILE_EDITING
+  ALLOW_EDIT: Avatar, Display Name, Bio, Social links.
+  FORBIDDEN_EDIT: User ID, Google Email, Account creation date.
+
+SECTION XII :: BUSINESS_RULES
+  - Only the account owner can edit their profile.
+  - Admin may view and edit for administrative purposes.
+  - FORBIDDEN: Display Email publicly.
+
+SECTION XIII :: RESPONSIVE
+  DESKTOP: multi-column.
+  TABLET: reasonably collapsed.
+  MOBILE: single-column.
+
+SECTION XIV :: EMPTY_STATE
+  IF: no Character, Prompt, or Bookmark
+    THEN: show appropriate message + button linking to the related function.
+
+SECTION XV :: LOADING
+  DISPLAY: Skeleton Loading.
+
+SECTION XVI :: ERROR_STATE
+  IF: load or save fails
+    THEN: show clear message + "Thử lại" button.
+
+SECTION XVII :: PERFORMANCE
+  REQUIRE: Lazy Loading for long lists, Pagination as needed, Optimized image loading.
+
+SECTION XVIII :: ACCESSIBILITY
+  REQUIRE: Keyboard navigation, clear focus, alt text for Avatar.
+
+SECTION XIX :: ACCEPTANCE_CRITERIA
+  VALIDATION:
+    ✓ Personal info displays correctly.
+    ✓ Profile edit succeeds.
+    ✓ Avatar upload validates format correctly.
+    ✓ Character shown only if creator_status = TRUE.
+    ✓ Prompt always shown.
+    ✓ Bookmark works.
+    ✓ Follow works.
+    ✓ Responsive on all devices.
+
+SECTION XX :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION:
+    ✓ Avatar
+    ✓ Display Name
+    ✓ Bio
+    ✓ Social Links
+    ✓ Creator Status
+    ✓ Character Management
+    ✓ Prompt Management
+    ✓ Bookmark
+    ✓ Follow
+    ✓ Responsive
+    ✓ Loading
+    ✓ Empty State
+    ✓ Error State
+    ✓ Accessibility
+    ✓ Performance
+
+END
+
+
+====================================================================
+MODULE_08 :: CREATOR_PROFILE
+====================================================================
+
+OBJECTIVE: The public page of a Creator. All users can access it to view Creator info, Character, and Prompt.
+RULE: Only users with creator_status = TRUE have a Creator page.
+
+SECTION I :: GOAL
+  CREATOR_PAGE_MUST:
+    - Introduce the Creator.
+    - Display Character.
+    - Display Prompt.
+    - Allow Follow.
+    - Build community reputation.
+
+SECTION II :: ACCESS_CONDITION
+  IF: creator_status = TRUE
+    THEN: Creator page exists.
+  IF: creator_status = FALSE
+    THEN: Creator page does not exist.
+  IF: user accesses a non-existent Creator URL
+    THEN: show 404 page per Module 02.5.
+
+SECTION III :: DISPLAYED_INFO
+  DISPLAY:
+    - Avatar
+    - Display Name
+    - Bio
+    - Social links
+    - Join date
+    - Total Character count
+    - Total Prompt count
+    - Total follower count
+    - Total Character likes
+    - Total Character saves
+  FORBIDDEN_DISPLAY:
+    - Email
+    - User ID
+    - Activity log
+
+SECTION IV :: ACTION_BUTTONS
+  IF: viewer is another person
+    THEN: show Follow / Unfollow.
+  IF: viewer is the owner
+    THEN: show "Chỉnh sửa hồ sơ" (Edit profile).
+
+SECTION V :: CHARACTER
+  DISPLAY:
+    STEP 1: Pinned Characters (max 3) at top of page.
+    STEP 2: Full Character list.
+  CARD_FIELDS: Avatar, Name, Slogan, Tag, Views, Likes, Saves, Post date.
+  ALLOW: Search, Sort, Filter by Tag.
+
+SECTION VI :: PROMPT
+  DISPLAY: all posted Prompts.
+  FIELDS: Prompt name, Purpose, Copy count, Bookmark, Post date.
+  REQUIRE: "Sao chép Prompt" button.
+  ALLOW: Search, Sort.
+
+SECTION VII :: FOLLOW_SYSTEM
+  ALLOW: Follow, Unfollow.
+  AFTER_FOLLOW: receive notification when Creator:
+    - Posts new Character.
+    - Posts new Prompt.
+  FORBIDDEN: Follow yourself.
+
+SECTION VIII :: BUSINESS_RULES
+  FORBIDDEN_DISPLAY:
+    - Deleted Character.
+    - Deleted Prompt.
+    - Content hidden by Admin.
+  RULE: Statistics must auto-update when underlying data changes.
+
+SECTION IX :: RESPONSIVE
+  DESKTOP: multi-column.
+  TABLET: reasonably collapsed.
+  MOBILE: single-column.
+
+SECTION X :: EMPTY_STATE
+  IF: Creator has not posted a Character
+    THEN: show "Creator chưa đăng Character nào."
+  IF: Creator has not posted a Prompt
+    THEN: show "Creator chưa đăng Prompt nào."
+
+SECTION XI :: LOADING
+  DISPLAY: Skeleton Loading for Profile, Character, Prompt.
+
+SECTION XII :: ERROR_STATE
+  IF: data load fails
+    THEN: show message + "Thử lại" button.
+
+SECTION XIII :: PERFORMANCE
+  REQUIRE: Lazy Loading for long lists, Pagination as needed, Optimized image loading.
+
+SECTION XIV :: ACCESSIBILITY
+  REQUIRE: Keyboard navigation, clear focus, alt text for Avatar and images.
+
+SECTION XV :: ACCEPTANCE_CRITERIA
+  VALIDATION:
+    ✓ Page exists only when creator_status = TRUE.
+    ✓ Creator info displays correctly.
+    ✓ Pinned Characters shown first.
+    ✓ Full Character and Prompt lists shown.
+    ✓ Follow works correctly.
+    ✓ Cannot follow yourself.
+    ✓ Responsive on Desktop, Tablet, Mobile.
+    ✓ No deleted/hidden data shown.
+
+SECTION XVI :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION:
+    ✓ Creator Profile
+    ✓ Avatar
+    ✓ Bio
+    ✓ Social Links
+    ✓ Follow
+    ✓ Character Pinned
+    ✓ Character List
+    ✓ Prompt List
+    ✓ Search
+    ✓ Filter
+    ✓ Responsive
+    ✓ Loading
+    ✓ Empty State
+    ✓ Error State
+    ✓ Accessibility
+    ✓ Performance
+
+END
+
+
+====================================================================
+MODULE_09 :: CHARACTER_SYSTEM
+====================================================================
+
+OBJECTIVE: Build the complete Character system for the Google AI Studio Roleplay community.
+DEFINE: Character is the central content of the website.
+RULE: Only users with creator_status = TRUE may create Character.
+
+SECTION I :: GOAL
+  CHARACTER_SYSTEM_MUST_ALLOW:
+    - Post Character
+    - Edit Character
+    - Delete Character
+    - Pin Character
+    - Search Character
+    - Filter Character
+    - View Character info
+    - Comment
+    - Like
+    - Save
+
+SECTION II :: ACCESS_PERMISSIONS
+  ROLE: Guest (not logged in)
+    ALLOW: View Character, Search, AI Search.
+    FORBIDDEN: Comment, Like, Save, Post Character.
+  ROLE: User
+    ALLOW: View, Comment, Like, Save.
+    FORBIDDEN: Create Character.
+  ROLE: Creator (creator_status = TRUE)
+    ALLOW: Create Character, Edit own Character, Delete own Character, Pin up to 3 Characters.
+  ROLE: Admin
+    ALLOW: Full authority.
+
+SECTION III :: CREATE_CHARACTER — REQUIRED_FIELDS
+  FIELD "Tên Character" (Name): REQUIRED, LIMIT max 50 characters.
+  FIELD "Avatar": REQUIRED, FORMAT [JPG, JPEG, PNG, WEBP], LIMIT max 10 MB.
+  FIELD "Giới tính" (Gender): REQUIRED.
+  FIELD "Slogan": REQUIRED, LIMIT max 700 characters.
+  FIELD "Plot": REQUIRED, LIMIT unlimited.
+  FIELD "Link Character": REQUIRED, VALIDATION: only Google AI Studio links accepted.
+
+SECTION IV :: TAG
+  LIMIT: max 6 Tags per Character.
+  LIMIT: max 30 characters per Tag.
+  ALLOW: Users may create new Tags.
+  RULE: Duplicate-named Tag automatically reuses the existing Tag.
+
+SECTION V :: CHARACTER_DETAIL_PAGE — DISPLAYED_FIELDS
+  - Avatar
+  - Name
+  - Creator
+  - Slogan
+  - Plot
+  - Gender
+  - Tag
+  - Character Link
+  - Post date
+  - View count
+  - Like count
+  - Save count
+  - Comments
+  - Related Characters
+
+SECTION VI :: RELATED_CHARACTER
+  WORKFLOW: AI auto-suggests Character based on: Tag, Category, Content, Creator.
+
+SECTION VII :: VIEW_COUNT
+  RULE: Each time the Character page opens, increment View count.
+  RULE: Do NOT increment repeatedly for multiple reloads within a short time window.
+
+SECTION VIII :: LIKE
+  RULE: One account can like only once.
+  ALLOW: Unlike.
+
+SECTION IX :: BOOKMARK
+  ALLOW: Save, Unsave (per account).
+  RULE: Saved Characters appear in the user's Profile.
+
+SECTION X :: EDIT
+  PERMISSION: Owner or Admin only.
+  AFTER_EDIT: PRESERVE: Link, View count, Like count, Save count, Comments.
+
+SECTION XI :: DELETE
+  PERMISSION: Owner or Admin only.
+  WORKFLOW:
+    STEP 1: Show confirmation dialog before deleting.
+    STEP 2: After deletion, Character no longer displays publicly.
+
+SECTION XII :: PIN
+  LIMIT: Creator may pin max 3 Characters.
+  RULE: Pinned Characters always display first on the Creator page.
+
+SECTION XIII :: SEARCH
+  ALLOW search by: Name, Tag, Creator, Gender, Category, Newest, Hot, Likes, Views, Saves.
+
+SECTION XIV :: AI_SEARCH
+  REQUIRE: Understand natural language.
+  EXAMPLE:
+    INPUT: "Nữ chính hiện đại lạnh lùng"
+    OUTPUT: Return matching Characters.
+
+SECTION XV :: BUSINESS_RULES
+  FORBIDDEN:
+    - Link outside Google AI Studio.
+    - Character without Avatar.
+    - Character without Slogan.
+    - Character without Plot.
+  IF: data is invalid
+    THEN: FORBIDDEN to post.
+
+SECTION XVI :: RESPONSIVE
+  DESKTOP: multi-column.
+  TABLET: collapsed.
+  MOBILE: single-column.
+
+SECTION XVII :: EMPTY_STATE
+  IF: no Character exists
+    THEN: show "Chưa có Character."
+    AND: show "Tạo Character" button (Creator only).
+
+SECTION XVIII :: LOADING
+  DISPLAY: Skeleton Loading.
+
+SECTION XIX :: ERROR_STATE
+  IF: load fails
+    THEN: show message + "Thử lại" button.
+
+SECTION XX :: PERFORMANCE
+  REQUIRE: Lazy Loading, Pagination, Optimized images, Appropriate caching.
+
+SECTION XXI :: ACCESSIBILITY
+  REQUIRE: Keyboard navigation, clear focus, alt text for images.
+
+SECTION XXII :: ACCEPTANCE_CRITERIA
+  VALIDATION:
+    ✓ Only Creator can create Character.
+    ✓ Full Character info displays correctly.
+    ✓ Link accepts Google AI Studio only.
+    ✓ Tag max 6.
+    ✓ Pinned Character max 3.
+    ✓ Like works.
+    ✓ Bookmark works.
+    ✓ Comment works.
+    ✓ AI Search works.
+    ✓ Responsive.
+    ✓ Empty State.
+    ✓ Loading.
+    ✓ Error State.
+
+SECTION XXIII :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION:
+    ✓ Create Character
+    ✓ Edit Character
+    ✓ Delete Character
+    ✓ Pin Character
+    ✓ Search
+    ✓ AI Search
+    ✓ Like
+    ✓ Bookmark
+    ✓ Comment
+    ✓ Related Character
+    ✓ Responsive
+    ✓ Loading
+    ✓ Empty State
+    ✓ Error State
+    ✓ Accessibility
+    ✓ Performance
+
+END
+
+
+====================================================================
+MODULE_10 :: PROMPT_SYSTEM
+====================================================================
+
+OBJECTIVE: Build the Prompt-sharing system for the Google AI Studio community.
+RULE: Every logged-in user may post Prompt.
+
+SECTION I :: GOAL
+  PROMPT_SYSTEM_MUST_ALLOW:
+    - Post Prompt
+    - Edit Prompt
+    - Delete Prompt
+    - Pin Prompt
+    - Copy Prompt
+    - Bookmark Prompt
+    - Comment
+    - Search
+    - AI Search
+
+SECTION II :: ACCESS_PERMISSIONS
+  ROLE: Guest (not logged in)
+    ALLOW: View Prompt, Search, AI Search.
+    FORBIDDEN: Post Prompt, Comment, Bookmark, Copy Prompt.
+  ROLE: User
+    ALLOW: Post Prompt, Edit own Prompt, Delete own Prompt, Copy Prompt, Bookmark, Comment.
+  ROLE: Creator
+    RULE: Has all User permissions.
+    NOTE: Creator's Prompt also displays on the Creator page.
+  ROLE: Admin
+    ALLOW: Full authority.
+
+SECTION III :: CREATE_PROMPT — FIELDS
+  FIELD "Tên Prompt" (Name): REQUIRED, unlimited characters.
+  FIELD "Mục đích" (Purpose): REQUIRED.
+  FIELD "Nội dung Prompt" (Content): REQUIRED, supports line breaks, preserves text formatting.
+  FIELD "Tag": OPTIONAL, LIMIT max 6 Tags, LIMIT max 30 characters per Tag.
+
+SECTION IV :: PROMPT_DETAIL_PAGE — DISPLAYED_FIELDS
+  - Prompt name
+  - Author
+  - Purpose
+  - Prompt content
+  - Tag
+  - Post date
+  - Last updated date
+  - View count
+  - Copy count
+  - Bookmark count
+  - Comments
+  - Related Prompt
+
+SECTION V :: COPY_PROMPT
+  REQUIRE: "Sao chép Prompt" button.
+  ON_SUCCESS:
+    - Show notification.
+    - Increment copy counter.
+  RULE: One account may copy multiple times.
+
+SECTION VI :: BOOKMARK
+  ALLOW: Save Prompt, Unsave Prompt (per account).
+  RULE: Saved Prompt appears in the user's Profile.
+
+SECTION VII :: COMMENT
+  DEPENDS_ON: shared Comment System Module.
+  SUPPORT: Comment, Reply to comment, Emotion reaction, Edit comment, Delete comment.
+
+SECTION VIII :: RELATED_PROMPT
+  DISPLAY based on: Tag, Purpose, Content, Author.
+
+SECTION IX :: PIN_PROMPT
+  ALLOW: Poster may pin their own Prompt.
+  RULE: Pinned Prompt displays first in:
+    - Personal Profile.
+    - Creator page (if applicable).
+  RULE: No limit on number of pinned Prompts (per current requirement).
+
+SECTION X :: SEARCH
+  ALLOW search by: Prompt name, Tag, Author, Purpose, Newest, Hot, Copy count, Bookmark.
+
+SECTION XI :: AI_SEARCH
+  REQUIRE: Understand natural language.
+  EXAMPLE:
+    INPUT: "Tìm Prompt tạo nhân vật phản diện"
+    OUTPUT: Return matching Prompts.
+
+SECTION XII :: BUSINESS_RULES
+  FORBIDDEN post Prompt IF:
+    - Missing name.
+    - Missing purpose.
+    - Missing content.
+  AFTER_EDIT: PRESERVE: View count, Copy count, Bookmark count, Comments.
+
+SECTION XIII :: RESPONSIVE
+  DESKTOP: multi-column.
+  TABLET: collapsed.
+  MOBILE: single-column.
+
+SECTION XIV :: EMPTY_STATE
+  IF: no Prompt exists
+    THEN: show "Chưa có Prompt nào."
+  IF: user is logged in
+    THEN: show "Đăng Prompt" button.
+
+SECTION XV :: LOADING
+  DISPLAY: Skeleton Loading.
+
+SECTION XVI :: ERROR_STATE
+  IF: load fails
+    THEN: show message + "Thử lại" button.
+
+SECTION XVII :: PERFORMANCE
+  REQUIRE: Lazy Loading, Pagination, Optimized search speed, Load only necessary data.
+
+SECTION XVIII :: ACCESSIBILITY
+  REQUIRE: Keyboard navigation, clear focus, screen reader support, standard-compliant contrast.
+
+SECTION XIX :: ACCEPTANCE_CRITERIA
+  VALIDATION:
+    ✓ Every logged-in User can post Prompt.
+    ✓ Prompt displays full info.
+    ✓ Copy Prompt works.
+    ✓ Copy counter works.
+    ✓ Bookmark works.
+    ✓ Comment works.
+    ✓ AI Search works.
+    ✓ Responsive.
+    ✓ Empty State.
+    ✓ Loading.
+    ✓ Error State.
+
+SECTION XX :: AI_IMPLEMENTATION_CHECKLIST
+  VALIDATION:
+    ✓ Create Prompt
+    ✓ Edit Prompt
+    ✓ Delete Prompt
+    ✓ Pin Prompt
+    ✓ Copy Prompt
+    ✓ Copy Counter
+    ✓ Bookmark
+    ✓ Comment
+    ✓ Related Prompt
+    ✓ Search
+    ✓ AI Search
+    ✓ Responsive
+    ✓ Empty State
+    ✓ Loading
+    ✓ Error State
+    ✓ Accessibility
+    ✓ Performance
+
+MODULE 11: FEEDBACK SYSTEM
+
+OBJECTIVE:
+  BUILD Feedback system cho phép người dùng góp ý, đánh giá và trao đổi với nhau
+  SUPPORT:
+    - Feedback công khai
+    - Feedback riêng tư
+
+REQUIRE:
+  - Gửi Feedback
+  - Nhận Feedback
+  - Trả lời Feedback
+  - Bình luận
+  - Thả cảm xúc
+  - Xóa Feedback
+  - Tìm kiếm Feedback công khai
+
+ACCESS_CONTROL:
+  ROLE: Khách chưa đăng nhập
+    ALLOW:
+      - Xem Feedback công khai
+    FORBIDDEN:
+      - Gửi Feedback
+      - Bình luận
+      - Thả cảm xúc
+  ROLE: User
+    ALLOW:
+      - Gửi Feedback
+      - Nhận Feedback
+      - Trả lời Feedback riêng tư
+      - Bình luận Feedback công khai
+      - Thả cảm xúc
+  ROLE: Admin
+    ALLOW:
+      - Xóa Feedback công khai
+      - Xóa bình luận vi phạm
+      - Khóa Feedback nếu cần
+    FORBIDDEN:
+      - Xem nội dung Feedback riêng tư
+
+CREATE_FEEDBACK:
+  FIELD: Người nhận
+    REQUIRED: true
+  FIELD: Người gửi
+    REQUIRED: true
+    NOTE: Tự động
+  FIELD: Chế độ
+    REQUIRED: true
+    OPTIONS:
+      - Công khai
+      - Riêng tư
+  FIELD: Tiêu đề
+    REQUIRED: false
+  FIELD: Nội dung
+    REQUIRED: true
+
+PRIVATE_FEEDBACK:
+  VISIBILITY:
+    - Người gửi
+    - Người nhận
+  RECIPIENT_CAN:
+    - Trả lời
+    - Thả cảm xúc
+    - Xóa Feedback
+  RULE: Người gửi không thể xóa Feedback sau khi đã gửi
+  RULE: Không xuất hiện trên Trang chủ
+  RULE: Không xuất hiện trong tìm kiếm
+
+PUBLIC_FEEDBACK:
+  DISPLAY_AS: bài đăng cộng đồng
+  ALLOW:
+    - Bình luận
+    - Trả lời bình luận
+    - Thả cảm xúc
+    - Chỉnh sửa bình luận
+    - Xóa bình luận của chính mình
+  DISPLAY_FIELDS:
+    - Người gửi
+    - Người nhận
+    - Thời gian
+    - Nội dung
+
+REACTIONS:
+  ALLOW:
+    - Thích
+    - Yêu thích
+    - Haha
+    - Wow
+    - Buồn
+    - Phẫn nộ
+  RULE: Một tài khoản chỉ được chọn một cảm xúc
+  RULE: Có thể thay đổi cảm xúc
+
+COMMENTS:
+  SCOPE: Feedback công khai sử dụng hệ thống bình luận chung
+  SUPPORT:
+    - Bình luận
+    - Trả lời bình luận
+    - Chỉnh sửa
+    - Xóa
+    - Thả cảm xúc
+
+NOTIFICATION:
+  IF: Người nhận
+    TRIGGER:
+      - Có Feedback mới
+      - Có phản hồi Feedback riêng tư
+  IF: Người gửi
+    TRIGGER:
+      - Feedback công khai có bình luận mới
+
+SEARCH:
+  SCOPE: Chỉ áp dụng cho Feedback công khai
+  SEARCH_BY:
+    - Người gửi
+    - Người nhận
+    - Nội dung
+    - Mới nhất
+
+BUSINESS_RULES:
+  RULE: Feedback riêng tư
+    - Không được lập chỉ mục tìm kiếm
+    - Không hiển thị công khai
+  RULE: Feedback công khai
+    - Có thể bị Admin xóa nếu vi phạm
+    - Bình luận vi phạm có thể bị xóa
+
+RESPONSIVE:
+  Desktop: Hiển thị đầy đủ
+  Tablet: Thu gọn khoảng cách
+  Mobile: Một cột
+
+EMPTY_STATE:
+  IF: chưa có Feedback
+    DISPLAY: "Chưa có Feedback."
+  IF: là người nhận
+    DISPLAY: "Bạn chưa nhận được Feedback nào."
+
+LOADING:
+  DISPLAY: Skeleton Loading
+
+ERROR_STATE:
+  IF: tải thất bại
+    DISPLAY:
+      - Thông báo
+      - Nút "Thử lại"
+
+PERFORMANCE:
+  - Lazy Loading
+  - Phân trang
+  - Chỉ tải Feedback cần hiển thị
+
+ACCESSIBILITY:
+  - Điều hướng bằng bàn phím
+  - Focus rõ ràng
+  - Hỗ trợ trình đọc màn hình
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Gửi Feedback thành công
+  ✓ Hỗ trợ chế độ công khai
+  ✓ Hỗ trợ chế độ riêng tư
+  ✓ Chỉ người gửi và người nhận xem được Feedback riêng tư
+  ✓ Bình luận hoạt động
+  ✓ Thả cảm xúc hoạt động
+  ✓ Responsive
+  ✓ Loading
+  ✓ Empty State
+  ✓ Error State
+
+AI_IMPLEMENTATION_CHECKLIST:
+  ✓ Create Feedback
+  ✓ Public Feedback
+  ✓ Private Feedback
+  ✓ Reply
+  ✓ Comment
+  ✓ Reactions
+  ✓ Notifications
+  ✓ Search
+  ✓ Responsive
+  ✓ Empty State
+  ✓ Loading
+  ✓ Error State
+  ✓ Accessibility
+  ✓ Performance
+END
+
+# ====================================================================
+
+MODULE 12: AI SEARCH
+
+OBJECTIVE:
+  BUILD hệ thống tìm kiếm thông minh sử dụng AI
+  REQUIRE: AI Search phải hiểu ngôn ngữ tự nhiên thay vì chỉ tìm theo từ khóa chính xác
+
+REQUIRE:
+  ALLOW search over:
+    - Character
+    - Prompt
+    - Creator
+    - Tag
+    - Thể loại
+    - Nội dung liên quan
+
+ACCESS_CONTROL:
+  RULE: Mọi người đều có thể sử dụng AI Search
+  RULE: Không yêu cầu đăng nhập
+
+SCOPE:
+  SEARCH_IN:
+    - Character
+    - Prompt
+    - Creator
+    - Tag
+  FORBIDDEN (do not search):
+    - Feedback riêng tư
+    - Dữ liệu bị xóa
+    - Nội dung bị Admin ẩn
+
+NATURAL_LANGUAGE_SEARCH:
+  EXAMPLE: "Tìm nữ chính hiện đại lạnh lùng"
+  EXAMPLE: "Tìm Prompt viết RP học đường"
+  EXAMPLE: "Creator chuyên thể loại huyền huyễn"
+  REQUIRE: AI phải phân tích ý nghĩa và trả về kết quả phù hợp
+  FORBIDDEN: Không yêu cầu người dùng nhập đúng từ khóa
+
+RESULTS_DISPLAY:
+  GROUP_BY:
+    - Character
+    - Prompt
+    - Creator
+  EACH_GROUP:
+    BUTTON: "Xem tất cả"
+
+SORT:
+  SORT_BY:
+    - Độ liên quan
+    - Mới nhất
+    - Hot
+    - Lượt thích
+    - Lượt xem
+    - Lượt sao chép (Prompt)
+
+BUSINESS_RULES:
+  FORBIDDEN (do not display):
+    - Character đã xóa
+    - Prompt đã xóa
+    - Creator bị khóa
+    - Nội dung bị Admin ẩn
+
+EMPTY_STATE:
+  IF: không có kết quả
+    DISPLAY: "Không tìm thấy kết quả phù hợp."
+    SUGGEST:
+      - Thử từ khóa khác
+      - Xem Character nổi bật
+      - Xem Prompt nổi bật
+
+LOADING:
+  DISPLAY: Skeleton Loading
+
+ERROR_STATE:
+  DISPLAY:
+    - Không thể tìm kiếm
+    - Nút "Thử lại"
+
+PERFORMANCE:
+  - Tìm kiếm nhanh
+  - Có bộ nhớ đệm
+  - Chỉ tải dữ liệu cần thiết
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Hiểu ngôn ngữ tự nhiên
+  ✓ Tìm Character
+  ✓ Tìm Prompt
+  ✓ Tìm Creator
+  ✓ Không hiển thị dữ liệu bị ẩn
+  ✓ Responsive
+
+AI_IMPLEMENTATION_CHECKLIST:
+  ✓ Natural Language Search
+  ✓ Character Search
+  ✓ Prompt Search
+  ✓ Creator Search
+  ✓ Ranking
+  ✓ Empty State
+  ✓ Loading
+  ✓ Error State
+  ✓ Performance
+END
+
+# ====================================================================
+
+MODULE 13: NOTIFICATION SYSTEM
+
+OBJECTIVE:
+  BUILD hệ thống thông báo tập trung
+  DEPENDS_ON: Tất cả Module khác đều sử dụng hệ thống này
+
+GOAL:
+  Thông báo giúp người dùng cập nhật các hoạt động liên quan đến tài khoản
+
+ACCESS_CONTROL:
+  RULE: Chỉ người đã đăng nhập mới có thông báo
+
+NOTIFICATION_TYPES:
+  TRIGGER khi:
+    - Có người Follow
+    - Creator đã Follow đăng Character mới
+    - Creator đã Follow đăng Prompt mới
+    - Có Feedback gửi đến
+    - Có phản hồi Feedback riêng tư
+    - Có người trả lời bình luận
+    - Có người thả cảm xúc vào bình luận
+    - Có người thích Character
+    - Có người Bookmark Character
+    - Có người Bookmark Prompt
+
+DISPLAY_FIELDS:
+  - Biểu tượng
+  - Tiêu đề
+  - Nội dung ngắn
+  - Thời gian
+  - Trạng thái đã đọc/chưa đọc
+
+INTERACTIONS:
+  ALLOW:
+    - Đánh dấu đã đọc
+    - Đánh dấu tất cả đã đọc
+    - Xóa thông báo
+
+EMAIL:
+  SEND khi:
+    - Có Feedback mới
+    - Có người Follow
+  OPTIONAL: Người dùng có thể bật/tắt Email trong Cài đặt
+
+BUSINESS_RULES:
+  FORBIDDEN: Không gửi thông báo cho chính người thực hiện hành động
+  EXAMPLE:
+    INPUT: Tự thích Character của mình
+    OUTPUT: Không gửi
+
+EMPTY_STATE:
+  DISPLAY: "Bạn chưa có thông báo nào."
+
+LOADING:
+  DISPLAY: Skeleton Loading
+
+ERROR_STATE:
+  DISPLAY: "Không thể tải thông báo."
+  BUTTON: "Thử lại"
+
+PERFORMANCE:
+  - Đồng bộ theo thời gian thực khi có thể
+  - Phân trang
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Follow Notification
+  ✓ Feedback Notification
+  ✓ Comment Notification
+  ✓ Email Notification
+  ✓ Mark as Read
+  ✓ Delete Notification
+  ✓ Responsive
+
+AI_IMPLEMENTATION_CHECKLIST:
+  ✓ Real-time Notification
+  ✓ Read Status
+  ✓ Delete
+  ✓ Email
+  ✓ Empty State
+  ✓ Loading
+  ✓ Error State
+  ✓ Performance
+END
+
+# ====================================================================
+
+MODULE 14: CONTACT
+
+OBJECTIVE:
+  BUILD trang Liên hệ để người dùng gửi yêu cầu hỗ trợ trực tiếp từ website
+
+GOAL:
+  Người dùng có thể gửi:
+    - Báo lỗi
+    - Góp ý
+    - Đề xuất tính năng
+    - Liên hệ quản trị viên
+
+ACCESS_CONTROL:
+  RULE: Mọi người đều có thể truy cập
+  RULE: Khách chưa đăng nhập vẫn có thể gửi biểu mẫu
+
+FORM:
+  FIELD: Họ và tên
+  FIELD: Email liên hệ
+  FIELD: Chủ đề
+  FIELD: Nội dung
+  FIELD: Tệp đính kèm
+    REQUIRED: false
+
+VALIDATION:
+  FORBIDDEN (không cho phép gửi nếu):
+    - Thiếu Email
+    - Thiếu Chủ đề
+    - Thiếu Nội dung
+
+WORKFLOW:
+  STEP: Sau khi gửi thành công
+    - Hiển thị thông báo xác nhận
+    - Gửi Email đến quản trị viên
+
+STATES:
+  REQUIRE: Hỗ trợ đầy đủ các trạng thái Empty / Loading / Error
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Gửi biểu mẫu thành công
+  ✓ Kiểm tra dữ liệu
+  ✓ Gửi Email
+  ✓ Responsive
+END
+
+# ====================================================================
+
+MODULE 15: SETTINGS
+
+OBJECTIVE:
+  Cho phép người dùng tùy chỉnh các thiết lập cá nhân
+
+GOAL:
+  Quản lý toàn bộ cài đặt tài khoản
+
+UI_SECTIONS:
+  - Hồ sơ
+  - Thông báo
+  - Giao diện
+  - Bảo mật
+
+NOTIFICATION_SETTINGS:
+  ALLOW toggle:
+    - Email khi có Follow
+    - Email khi có Feedback
+    - Email khi có Character mới
+    - Email khi có Prompt mới
+
+APPEARANCE_SETTINGS:
+  OPTIONS:
+    - Light Mode
+    - Dark Mode
+    - Theo hệ thống
+
+ACCOUNT_INFO:
+  DISPLAY:
+    - Email Google
+    - Ngày tạo
+    - Creator Status
+  FORBIDDEN: Không cho phép sửa Email
+
+SECURITY:
+  ALLOW:
+    - Đăng xuất tất cả thiết bị
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Đổi giao diện
+  ✓ Lưu cài đặt
+  ✓ Đăng xuất
+  ✓ Responsive
+END
+
+# ====================================================================
+
+MODULE 16: COMMENT SYSTEM
+
+OBJECTIVE:
+  Đây là hệ thống bình luận dùng chung cho toàn bộ website
+  USED_BY:
+    - Character
+    - Prompt
+    - Feedback công khai
+  FORBIDDEN: Không được tạo hệ thống bình luận riêng cho từng Module
+
+GOAL:
+  Cho phép người dùng trao đổi dưới mọi nội dung công khai
+
+ACCESS_CONTROL:
+  ROLE: Khách
+    ALLOW:
+      - Chỉ xem
+  ROLE: User
+    ALLOW:
+      - Bình luận
+      - Trả lời
+      - Chỉnh sửa bình luận của mình
+      - Xóa bình luận của mình
+      - Thả cảm xúc
+  ROLE: Admin
+    ALLOW:
+      - Xóa mọi bình luận vi phạm
+
+FEATURES:
+  SUPPORT:
+    - Bình luận nhiều cấp
+    - Trả lời bình luận
+    - Chỉnh sửa
+    - Xóa
+    - Thả cảm xúc
+    - Hiển thị thời gian đăng
+
+REACTIONS:
+  SUPPORT:
+    - Thích
+    - Yêu thích
+    - Haha
+    - Wow
+    - Buồn
+    - Phẫn nộ
+  RULE: Một tài khoản chỉ có một cảm xúc cho mỗi bình luận
+
+BUSINESS_RULES:
+  FORBIDDEN:
+    - Bình luận rỗng
+    - Bình luận đã xóa vẫn hiển thị nội dung
+  RULE: Admin có thể xóa bình luận vi phạm
+
+NOTIFICATION:
+  TRIGGER khi:
+    - Có người trả lời bình luận
+    - Có người thả cảm xúc
+
+STATES:
+  REQUIRE: Hỗ trợ đầy đủ Empty / Loading / Error
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Comment
+  ✓ Reply
+  ✓ Edit
+  ✓ Delete
+  ✓ Reactions
+  ✓ Notification
+  ✓ Responsive
+END
+
+# ====================================================================
+
+MODULE 17: BOOKMARK
+
+OBJECTIVE:
+  Xây dựng hệ thống Bookmark thống nhất cho toàn bộ website
+
+GOAL:
+  Người dùng có thể:
+    - Lưu Character
+    - Lưu Prompt
+    - Hủy lưu
+    - Xem danh sách đã lưu
+
+SCOPE:
+  APPLIES_TO:
+    - Character
+    - Prompt
+  FORBIDDEN (không áp dụng cho):
+    - Creator
+    - Feedback
+
+ACCESS_CONTROL:
+  ROLE: Khách
+    FORBIDDEN:
+      - Bookmark
+  ROLE: User
+    ALLOW:
+      - Bookmark
+  ROLE: Admin
+    ALLOW:
+      - Toàn quyền
+
+RULE:
+  - Một tài khoản chỉ lưu một lần
+  - Có thể bỏ lưu
+  - Bookmark không công khai
+  - Chỉ chủ tài khoản xem được
+
+STATISTICS:
+  DISPLAY:
+    - Tổng lượt lưu Character
+    - Tổng lượt lưu Prompt
+
+NOTIFICATION:
+  RULE: Không gửi thông báo khi có Bookmark
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Bookmark Character
+  ✓ Bookmark Prompt
+  ✓ Bỏ Bookmark
+  ✓ Đồng bộ Hồ sơ
+END
+
+# ====================================================================
+
+MODULE 18: FOLLOW
+
+OBJECTIVE:
+  Cho phép người dùng theo dõi Creator
+
+GOAL:
+  Người dùng có thể:
+    - Follow
+    - Unfollow
+    - Xem danh sách đang Follow
+
+ACCESS_CONTROL:
+  ROLE: Khách
+    FORBIDDEN:
+      - Follow
+  ROLE: User
+    ALLOW:
+      - Follow
+
+SCOPE:
+  ALLOW: Chỉ Follow Creator
+  FORBIDDEN (không Follow):
+    - Character
+    - Prompt
+
+NOTIFICATION:
+  IF: Follow
+    TRIGGER: Creator nhận thông báo
+  IF: Follower
+    TRIGGER khi:
+      - Creator đăng Character
+      - Creator đăng Prompt
+
+RULE:
+  FORBIDDEN: Không Follow chính mình
+  RULE: Một tài khoản chỉ Follow một lần
+
+STATISTICS:
+  DISPLAY:
+    - Người theo dõi
+    - Đang theo dõi
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Follow
+  ✓ Unfollow
+  ✓ Notification
+  ✓ Thống kê
+END
+
+# ====================================================================
+
+MODULE 19: TAG & CATEGORY
+
+OBJECTIVE:
+  Xây dựng hệ thống phân loại nội dung
+
+TAG:
+  APPLIES_TO:
+    - Character
+    - Prompt
+
+TAG_RULES:
+  LIMIT: Tối đa 6 Tag
+  LIMIT: Mỗi Tag tối đa 30 ký tự
+  RULE: Người dùng được tạo Tag mới
+  IF: Tag tồn tại
+    THEN: Sử dụng Tag cũ
+
+CATEGORY:
+  Character EXAMPLE:
+    - Hiện đại
+    - Cổ đại
+    - Fantasy
+    - Kinh dị
+    - Trinh thám
+    - Học đường
+  Prompt EXAMPLE:
+    - RP
+    - Character
+    - World Building
+    - Jailbreak
+    - Coding
+
+SEARCH:
+  SEARCH_BY:
+    - Tag
+    - Category
+
+TRENDING_TAG:
+  DISPLAY: Tag sử dụng nhiều nhất
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Tạo Tag
+  ✓ Tái sử dụng Tag
+  ✓ Filter
+  ✓ Trending
+END
+
+# ====================================================================
+
+MODULE 20: DISCOVERY / EXPLORE PAGE
+
+OBJECTIVE:
+  Trang tổng hợp giúp người dùng khám phá toàn bộ nội dung
+
+GOAL:
+  DISPLAY:
+    - Character
+    - Prompt
+    - Creator
+
+FILTER:
+  FILTER_BY:
+    - Tag
+    - Category
+    - Creator
+    - Hot
+    - Mới nhất
+    - Lượt xem
+    - Lượt thích
+    - Lượt lưu
+
+AI_SEARCH:
+  REQUIRE: Có thanh AI Search
+
+SECTION:
+  - Character
+  - Prompt
+  - Creator
+  - Trending Tag
+
+SORT:
+  SORT_BY:
+    - Liên quan
+    - Mới nhất
+    - Hot
+
+RESPONSIVE:
+  - Desktop
+  - Tablet
+  - Mobile
+
+EMPTY_STATE:
+  IF: không có dữ liệu
+    DISPLAY: "Chưa có nội dung."
+
+LOADING:
+  DISPLAY: Skeleton Loading
+
+ERROR_STATE:
+  DISPLAY: "Nội dung hiện không khả dụng."
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Filter
+  ✓ Search
+  ✓ AI Search
+  ✓ Responsive
+  ✓ Loading
+  ✓ Empty State
+END
+
+# ====================================================================
+
+MODULE 21: DATABASE DESIGN
+
+OBJECTIVE:
+  Thiết kế cơ sở dữ liệu chuẩn hóa (3NF), dễ mở rộng và tối ưu hiệu năng
+
+DATABASE_ENGINE:
+  REQUIRE:
+    - Sử dụng PostgreSQL
+    - UTF-8
+    - Soft Delete
+    - Created At
+    - Updated At
+
+TABLES:
+  - users
+  - creator_profiles
+  - characters
+  - prompts
+  - tags
+  - character_tags
+  - prompt_tags
+  - bookmarks
+  - follows
+  - feedbacks
+  - comments
+  - comment_reactions
+  - notifications
+  - activity_logs
+  - contact_forms
+  - settings
+  - reports
+
+RELATIONS:
+  ENTITY: User
+    HAS_MANY:
+      - Character
+      - Prompt
+      - Bookmark
+      - Notification
+      - Feedback
+  ENTITY: Character
+    HAS_MANY:
+      - Tag
+      - Comment
+  ENTITY: Prompt
+    HAS_MANY:
+      - Tag
+      - Comment
+  ENTITY: Feedback
+    HAS_MANY:
+      - Comment
+
+INDEX:
+  CREATE_INDEX_FOR:
+    - Display Name
+    - Character Name
+    - Prompt Name
+    - Tag
+    - Creator
+    - Created At
+
+BUSINESS_RULES:
+  FORBIDDEN: Không xóa cứng dữ liệu
+  RULE: Sử dụng Soft Delete
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Chuẩn hóa 3NF
+  ✓ Có Foreign Key
+  ✓ Có Index
+  ✓ Soft Delete
+  ✓ Timestamp
+END
+
+# ====================================================================
+
+MODULE 22: API DESIGN
+
+OBJECTIVE:
+  Thiết kế REST API thống nhất
+
+ENDPOINT_GROUP: AUTH
+  POST /auth/login/google
+  POST /auth/logout
+  GET /auth/me
+
+ENDPOINT_GROUP: USER
+  GET /users/me
+  PATCH /users/me
+
+ENDPOINT_GROUP: CHARACTER
+  GET /characters
+  GET /characters/{id}
+  POST /characters
+  PATCH /characters/{id}
+  DELETE /characters/{id}
+
+ENDPOINT_GROUP: PROMPT
+  GET /prompts
+  POST /prompts
+  PATCH /prompts/{id}
+  DELETE /prompts/{id}
+
+ENDPOINT_GROUP: CREATOR
+  GET /creators
+  GET /creators/{id}
+  POST /follow
+  DELETE /follow
+
+ENDPOINT_GROUP: FEEDBACK
+  GET /feedback
+  POST /feedback
+  DELETE /feedback
+
+ENDPOINT_GROUP: COMMENT
+  POST /comments
+  PATCH /comments
+  DELETE /comments
+
+ENDPOINT_GROUP: NOTIFICATION
+  GET /notifications
+  PATCH /notifications/read
+
+ENDPOINT_GROUP: SEARCH
+  GET /search
+  POST /ai-search
+
+RESPONSE_FORMAT:
+  TYPES:
+    - Success
+    - Error
+    - Pagination
+    - Validation Error
+  RULE: Phải thống nhất cho toàn bộ API
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ RESTful
+  ✓ Authentication
+  ✓ Authorization
+  ✓ Pagination
+  ✓ Validation
+END
+
+# ====================================================================
+
+MODULE 23: ADMIN DASHBOARD
+
+OBJECTIVE:
+  Trang quản trị dành riêng cho Admin
+
+DASHBOARD:
+  DISPLAY:
+    - Tổng User
+    - Tổng Creator
+    - Tổng Character
+    - Tổng Prompt
+    - Tổng Feedback
+    - Tổng Bình luận
+
+STATISTICS:
+  DISPLAY_CHARTS:
+    - User mới
+    - Creator mới
+    - Character mới
+    - Prompt mới
+    - Follow
+    - Bookmark
+
+USER_MANAGEMENT:
+  ALLOW:
+    - Tìm kiếm
+    - Khóa tài khoản
+    - Mở khóa
+    - Xóa tài khoản
+
+CHARACTER_MANAGEMENT:
+  ALLOW:
+    - Xóa
+    - Ẩn
+    - Khôi phục
+
+PROMPT_MANAGEMENT:
+  ALLOW:
+    - Xóa
+    - Ẩn
+    - Khôi phục
+
+FEEDBACK_MANAGEMENT:
+  SCOPE: Chỉ quản lý Feedback công khai
+  FORBIDDEN: Không hiển thị Feedback riêng tư
+
+REPORT_QUEUE:
+  DISPLAY: Danh sách báo cáo
+  ALLOW:
+    - Xem
+    - Xử lý
+    - Đóng báo cáo
+
+ACTIVITY_LOG:
+  RECORD:
+    - Đăng nhập
+    - Xóa
+    - Khóa
+    - Thay đổi quyền
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Dashboard
+  ✓ Statistics
+  ✓ User Management
+  ✓ Character Management
+  ✓ Prompt Management
+  ✓ Report Queue
+  ✓ Activity Log
+END
+
+# ====================================================================
+
+MODULE 24: MODERATION SYSTEM
+
+OBJECTIVE:
+  Xây dựng hệ thống báo cáo và kiểm duyệt giúp duy trì môi trường cộng đồng an toàn
+
+GOAL:
+  ALLOW:
+    - Báo cáo nội dung
+    - Báo cáo tài khoản
+    - Quản lý báo cáo
+    - Ghi nhận lịch sử xử lý
+
+REPORTABLE_TARGETS:
+  - Character
+  - Prompt
+  - Feedback công khai
+  - Bình luận
+  - Creator
+
+SUBMIT_REPORT:
+  FIELD: Đối tượng bị báo cáo
+  FIELD: Lý do
+  FIELD: Mô tả bổ sung
+    REQUIRED: false
+  FIELD: Ảnh minh chứng
+    REQUIRED: false
+
+REPORT_STATUS:
+  - Chờ xử lý
+  - Đang xử lý
+  - Đã xử lý
+  - Đã từ chối
+
+ACCESS_CONTROL:
+  ROLE: User
+    ALLOW:
+      - Gửi báo cáo
+  ROLE: Admin
+    ALLOW:
+      - Xem
+      - Phân loại
+      - Xử lý
+      - Đóng báo cáo
+
+ADMIN_ACTIONS:
+  - Ẩn nội dung
+  - Khôi phục
+  - Xóa
+  - Khóa tài khoản
+  - Mở khóa tài khoản
+
+AUDIT_LOG:
+  RECORD:
+    - Admin thực hiện
+    - Thời gian
+    - Hành động
+    - Đối tượng
+    - Lý do
+  FORBIDDEN: Không cho phép chỉnh sửa hoặc xóa Audit Log
+
+BUSINESS_RULES:
+  RULE: Một người dùng có thể gửi nhiều báo cáo cho các đối tượng khác nhau
+  FORBIDDEN: Không cho phép gửi nhiều báo cáo trùng lặp cho cùng một đối tượng trong thời gian ngắn
+  RULE: Feedback riêng tư không được báo cáo vì chỉ người gửi và người nhận có thể xem
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Report
+  ✓ Moderation Queue
+  ✓ Audit Log
+  ✓ Report Status
+  ✓ Admin Action
+END
+
+# ====================================================================
+
+MODULE 25: SECURITY
+
+OBJECTIVE:
+  Đảm bảo an toàn cho dữ liệu, tài khoản và toàn bộ hệ thống
+
+AUTHENTICATION:
+  - Đăng nhập bằng Google
+  - Quản lý phiên đăng nhập an toàn
+
+AUTHORIZATION:
+  ROLES:
+    - Guest
+    - User
+    - Admin
+  RULE: Kiểm tra quyền ở mọi API và giao diện
+
+CAPTCHA:
+  APPLIES_TO:
+    - Đăng nhập
+    - Gửi biểu mẫu liên hệ
+    - Gửi báo cáo
+    - Các hành động có nguy cơ bị lạm dụng
+
+RATE_LIMIT:
+  RULE: Giới hạn số lượng yêu cầu trong một khoảng thời gian để chống spam và tấn công
+
+INPUT_VALIDATION:
+  RULE: Kiểm tra toàn bộ dữ liệu đầu vào
+  PREVENT:
+    - SQL Injection
+    - Cross-Site Scripting (XSS) (Chèn mã độc vào trang web)
+    - Cross-Site Request Forgery (CSRF) (Giả mạo yêu cầu từ trang khác)
+
+FILE_UPLOAD:
+  ALLOW_ONLY:
+    - JPG
+    - JPEG
+    - PNG
+    - WEBP
+  CHECK:
+    - Dung lượng
+    - Định dạng
+    - Nội dung tệp
+
+PASSWORD_TOKEN:
+  FORBIDDEN: Không lưu mật khẩu Google
+  RULE: Lưu Token an toàn
+
+LOG:
+  RECORD:
+    - Đăng nhập
+    - Đăng xuất
+    - Hành động bất thường
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Authorization
+  ✓ Validation
+  ✓ CAPTCHA
+  ✓ Rate Limit
+  ✓ Secure Upload
+  ✓ Security Log
+END
+
+# ====================================================================
+
+MODULE 26: PERFORMANCE & SCALABILITY
+
+OBJECTIVE:
+  Đảm bảo website tải nhanh, ổn định và có khả năng mở rộng
+
+PERFORMANCE:
+  - Lazy Loading
+  - Code Splitting (Tách mã nguồn theo từng phần)
+  - Image Optimization (Tối ưu hình ảnh)
+  - Caching (Bộ nhớ đệm)
+
+DATABASE:
+  - Sử dụng Index
+  - Truy vấn tối ưu
+  - Phân trang
+
+API:
+  - Phân trang
+  - Lọc
+  - Sắp xếp
+  - Chỉ trả về dữ liệu cần thiết
+
+FRONTEND:
+  - Tải bất đồng bộ
+  - Skeleton Loading
+  - Giảm số lần gọi API
+
+SCALABILITY:
+  DESIGN_TO_SCALE:
+    - Người dùng
+    - Character
+    - Prompt
+    - Feedback
+    - Bình luận
+  RULE: Không cần thay đổi kiến trúc khi dữ liệu tăng
+
+MONITORING:
+  TRACK:
+    - Thời gian phản hồi
+    - Lỗi
+    - Mức sử dụng tài nguyên
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Fast Loading
+  ✓ Optimized API
+  ✓ Optimized Database
+  ✓ Responsive
+  ✓ Scalable Architecture
+END
+
+# ====================================================================
+
+MODULE 27: SEO
+
+OBJECTIVE:
+  Tối ưu website để dễ được lập chỉ mục và hiển thị trên các công cụ tìm kiếm
+
+META_DATA:
+  EACH PAGE REQUIRE:
+    - Title
+    - Meta Description
+    - Meta Keywords
+    - Canonical URL
+
+OPEN_GRAPH:
+  IF: chia sẻ Character, Prompt hoặc Creator
+    DISPLAY:
+      - Ảnh đại diện
+      - Tiêu đề
+      - Mô tả
+      - URL
+
+TWITTER_CARD:
+  REQUIRE: Hỗ trợ hiển thị đẹp khi chia sẻ lên X (Twitter)
+
+SITEMAP:
+  RULE: Tự động sinh Sitemap
+  INCLUDE:
+    - Character
+    - Prompt
+    - Creator
+    - Trang tĩnh
+
+ROBOTS_TXT:
+  ALLOW index:
+    - Character
+    - Prompt
+    - Creator
+  FORBIDDEN index:
+    - Hồ sơ cá nhân
+    - Cài đặt
+    - Feedback riêng tư
+    - Trang quản trị
+
+STRUCTURED_DATA:
+  USE: Schema.org
+  APPLIES_TO:
+    - Character
+    - Prompt
+    - Creator
+
+URL:
+  RULE: URL thân thiện
+  RULE: Không chứa ID khó đọc nếu có thể sử dụng Slug
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Metadata
+  ✓ Open Graph
+  ✓ Twitter Card
+  ✓ Sitemap
+  ✓ Robots
+  ✓ Structured Data
+END
+
+# ====================================================================
+
+MODULE 28: ANALYTICS
+
+OBJECTIVE:
+  Cung cấp hệ thống thống kê cho Creator và Admin
+
+CREATOR_ANALYTICS:
+  DISPLAY:
+    - Tổng Character
+    - Tổng Prompt
+    - Tổng lượt xem
+    - Tổng lượt thích
+    - Tổng lượt lưu
+    - Tổng lượt sao chép Prompt
+    - Người theo dõi
+    - Tăng trưởng theo thời gian
+
+ADMIN_ANALYTICS:
+  DISPLAY:
+    - User mới
+    - Creator mới
+    - Character mới
+    - Prompt mới
+    - Feedback
+    - Bình luận
+    - Follow
+    - Bookmark
+    - Báo cáo vi phạm
+
+CHARTS:
+  SUPPORT:
+    - Theo ngày
+    - Theo tuần
+    - Theo tháng
+    - Theo năm
+
+EXPORT:
+  ALLOW formats:
+    - CSV
+    - XLSX
+
+BUSINESS_RULES:
+  RULE: Creator chỉ xem dữ liệu của mình
+  RULE: Admin xem toàn hệ thống
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Creator Analytics
+  ✓ Admin Analytics
+  ✓ Charts
+  ✓ Export
+END
+
+# ====================================================================
+
+MODULE 29: TESTING & QA
+
+OBJECTIVE:
+  Đảm bảo toàn bộ website hoạt động chính xác trước khi phát hành
+
+UNIT_TEST:
+  SCOPE: Kiểm thử từng chức năng riêng lẻ
+
+INTEGRATION_TEST:
+  SCOPE: Kiểm thử sự phối hợp giữa:
+    - Database
+    - API
+    - Giao diện
+
+END_TO_END_TEST:
+  SCOPE: Kiểm thử các quy trình hoàn chỉnh
+  EXAMPLE:
+    - Đăng nhập
+    - Tạo Character
+    - Đăng Prompt
+    - Follow
+    - Bookmark
+    - Feedback
+
+SECURITY_TEST:
+  CHECK:
+    - Phân quyền
+    - SQL Injection
+    - XSS
+    - CSRF
+
+PERFORMANCE_TEST:
+  EVALUATE:
+    - Thời gian tải
+    - Thời gian phản hồi API
+    - Khả năng chịu tải
+
+ACCESSIBILITY_TEST:
+  CHECK:
+    - Điều hướng bằng bàn phím
+    - Trình đọc màn hình
+    - Độ tương phản
+
+BROWSER_TEST:
+  TEST_ON:
+    - Chrome
+    - Edge
+    - Firefox
+    - Safari
+
+RESPONSIVE_TEST:
+  TEST_ON:
+    - Desktop
+    - Tablet
+    - Mobile
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Unit Test
+  ✓ Integration Test
+  ✓ End-to-End Test
+  ✓ Security Test
+  ✓ Performance Test
+  ✓ Accessibility Test
+  ✓ Responsive Test
+END
+
+# ====================================================================
+
+MODULE 30: GLOBAL AI IMPLEMENTATION SPECIFICATION
+
+OBJECTIVE:
+  Đây là tài liệu có mức ưu tiên cao nhất
+  PRIORITY: Nếu có xung đột giữa các Module, Module 30 được ưu tiên áp dụng
+
+IMPLEMENTATION_PRIORITY:
+  STEP 1: Database
+  STEP 2: Backend API
+  STEP 3: Authentication
+  STEP 4: Authorization
+  STEP 5: Frontend
+  STEP 6: AI Search
+  STEP 7: Notification
+  STEP 8: Analytics
+  STEP 9: Testing
+
+SINGLE_SOURCE_OF_TRUTH:
+  RULE: Mỗi tính năng chỉ được triển khai một lần
+  FORBIDDEN: Không tạo logic trùng lặp
+
+CONSISTENCY:
+  RULE: Toàn bộ website phải thống nhất:
+    - Giao diện
+    - Màu sắc
+    - Typography
+    - Icon
+    - Khoảng cách
+    - Thông báo
+    - Form
+
+REUSE:
+  PRIORITIZE reuse of:
+    - Component
+    - API
+    - Business Logic
+    - Validation
+
+DATABASE:
+  FORBIDDEN: Không tạo bảng ngoài Module 21 nếu không thật sự cần thiết
+
+API:
+  RULE: Chỉ sử dụng API đã định nghĩa trong Module 22
+
+SECURITY:
+  REQUIRE mọi API đều phải:
+    - Kiểm tra xác thực
+    - Kiểm tra phân quyền
+    - Kiểm tra dữ liệu đầu vào
+
+PERFORMANCE:
+  DEPENDS_ON: Áp dụng toàn bộ quy tắc của Module 26
+
+ERROR_HANDLING:
+  FORBIDDEN: Không hiển thị lỗi hệ thống cho người dùng
+  RULE: Luôn trả về thông báo thân thiện
+  RULE: Ghi chi tiết lỗi vào Log
+
+CODE_QUALITY:
+  REQUIRE mã nguồn phải:
+    - Dễ đọc
+    - Có cấu trúc
+    - Dễ mở rộng
+    - Dễ bảo trì
+    - Không lặp mã
+
+FINAL_VALIDATION:
+  BEFORE hoàn thành website, AI phải tự kiểm tra:
+    ✓ Đúng toàn bộ yêu cầu Module 01–29
+    ✓ Không thiếu chức năng
+    ✓ Không tạo thêm chức năng ngoài yêu cầu
+    ✓ Không mâu thuẫn giữa các Module
+    ✓ Không có liên kết hỏng
+    ✓ Không có dữ liệu thử nghiệm trong môi trường phát hành
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Không có xung đột giữa các Module
+  ✓ Triển khai đầy đủ Module 01–29
+  ✓ Kiến trúc nhất quán
+  ✓ Website có thể triển khai thực tế
+  ✓ Không cần AI tự suy diễn thêm yêu cầu
+END
+
+# ====================================================================
+
+MODULE 31: DESIGN SYSTEM
+
+OBJECTIVE:
+  Thiết kế toàn bộ giao diện theo một Design System thống nhất
+
+THEME:
+  - Light Mode
+  - Dark Mode
+  - System Mode
+
+COLOR_PALETTE:
+  PRIMARY:
+    - Black
+    - White
+    - Gray
+  FORBIDDEN: Không sử dụng màu sắc sặc sỡ làm màu chủ đạo
+
+TYPOGRAPHY:
+  RULE: Font thống nhất
+  VARIANTS:
+    - Heading
+    - Body
+    - Caption
+    - Button
+
+SPACING:
+  RULE: Sử dụng hệ thống khoảng cách thống nhất
+
+BORDER_RADIUS:
+  RULE: Toàn website thống nhất
+
+SHADOW:
+  RULE: Shadow nhẹ
+  FORBIDDEN: Không sử dụng hiệu ứng nặng
+
+ANIMATION:
+  RULE: Animation ngắn
+  FORBIDDEN: Không gây khó chịu
+
+ICON:
+  RULE: Toàn bộ Icon phải cùng một bộ
+
+RESPONSIVE:
+  - Desktop
+  - Tablet
+  - Mobile
+
+ACCESSIBILITY:
+  - Độ tương phản
+  - Keyboard
+  - Screen Reader
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Design thống nhất
+  ✓ Dark Mode
+  ✓ Responsive
+  ✓ Accessibility
+END
+
+# ====================================================================
+
+MODULE 32: FRONTEND ARCHITECTURE
+
+OBJECTIVE:
+  Xây dựng Frontend có khả năng mở rộng
+
+FRAMEWORK:
+  REQUIRE: Frontend hiện đại
+  REQUIRE: Component Based
+
+COMPONENT:
+  - Button
+  - Card
+  - Avatar
+  - Modal
+  - Dialog
+  - Toast
+  - Input
+  - Dropdown
+  - Search
+  - Pagination
+  - Comment
+  - Notification
+
+STATE_MANAGEMENT:
+  RULE: Quản lý trạng thái tập trung
+
+ROUTING:
+  - Public Route
+  - Protected Route
+  - Admin Route
+
+LAZY_LOADING:
+  REQUIRED: true
+
+CODE_SPLITTING:
+  REQUIRED: true
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Reusable Component
+  ✓ Responsive
+  ✓ Performance
+END
+
+# ====================================================================
+
+MODULE 33: BACKEND ARCHITECTURE
+
+OBJECTIVE:
+  Backend theo kiến trúc phân tầng
+
+LAYER:
+  - Controller
+  - Service
+  - Repository
+  - Database
+
+AUTHENTICATION:
+  - Google Login
+
+AUTHORIZATION:
+  - Role
+  - Permission
+
+VALIDATION:
+  SCOPE: Toàn bộ Request
+
+LOGGING:
+  - Request
+  - Error
+  - Security
+  - Audit
+
+CACHING:
+  REQUIRED: true
+
+QUEUE:
+  - Notification
+  - Email
+  - Analytics
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Clean Architecture
+  ✓ Reusable
+  ✓ Maintainable
+END
+
+# ====================================================================
+
+MODULE 34: DEPLOYMENT
+
+OBJECTIVE:
+  Website có thể triển khai thực tế
+
+ENVIRONMENT:
+  - Development
+  - Testing
+  - Production
+
+ENVIRONMENT_VARIABLE:
+  SCOPE: Toàn bộ Secret
+
+CI_CD:
+  - Tự động Build
+  - Tự động Test
+
+BACKUP:
+  - Database
+  - File
+
+MONITORING:
+  - CPU
+  - RAM
+  - Storage
+  - API
+
+LOGGING:
+  - Application
+  - Database
+  - Security
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Deploy
+  ✓ Backup
+  ✓ Monitoring
+END
+
+# ====================================================================
+
+MODULE 35: ERROR STANDARDIZATION
+
+OBJECTIVE:
+  Chuẩn hóa toàn bộ lỗi
+
+FRONTEND_ERRORS:
+  - 404
+  - 403
+  - 500
+  - Network Error
+  - Validation Error
+
+BACKEND_ERRORS:
+  - 400
+  - 401
+  - 403
+  - 404
+  - 409
+  - 422
+  - 429
+  - 500
+
+API_RESPONSE:
+  TYPES:
+    - Success
+    - Error
+    - Validation
+
+BUSINESS_RULE:
+  FORBIDDEN:
+    - Không hiển thị Stack Trace
+    - Không lộ Database
+    - Không lộ Server
+
+LOGGING:
+  RULE: Ghi Log đầy đủ
+
+VALIDATION: (ACCEPTANCE_CRITERIA)
+  ✓ Friendly Error
+  ✓ Secure Error
+  ✓ API Standard
+END
+
+# ====================================================================
+
+MODULE 36: MASTER BUILD PROMPT
+
+PRIORITY: Đây là Prompt có độ ưu tiên cao nhất
+
+WORKFLOW:
+  STEP 0: AI phải đọc toàn bộ Module 01 → 35 trước
+  STEP 1: Phân tích toàn bộ dữ liệu
+  STEP 2: Kiểm tra xung đột
+  STEP 3: Loại bỏ dữ liệu trùng
+  STEP 4: Không tự thêm chức năng
+  STEP 5: Không bỏ sót chức năng
+  STEP 6: Triển khai Database
+  STEP 7: Triển khai Backend
+  STEP 8: Triển khai Frontend
+  STEP 9: Triển khai Authentication
+  STEP 10: Triển khai Authorization
+  STEP 11: Triển khai Notification
+  STEP 12: Triển khai AI Search
+  STEP 13: Triển khai SEO
+  STEP 14: Triển khai Performance
+  STEP 15: Triển khai Analytics
+  STEP 16: Kiểm thử toàn bộ hệ thống
+  STEP 17: Đảm bảo Responsive
+  STEP 18: Đảm bảo Accessibility
+  STEP 19: Đảm bảo Dark Mode
+  STEP 20: Sinh toàn bộ mã nguồn hoàn chỉnh
+
+FORBIDDEN:
+  - Tự thay đổi yêu cầu
+  - Tự thêm chức năng
+  - Tự bỏ chức năng
+  - Tự thay đổi Business Rule
+
+IF: phát hiện xung đột
+  THEN: PRIORITY ORDER:
+    1. Module 36
+    2. Module 30
+    3. Module còn lại
+
+OUTPUT:
+  AI phải tạo ra website hoàn chỉnh, có thể Build và Deploy, đáp ứng đầy đủ tất cả yêu cầu trong Module 01–35
+END
+
+# ====================================================================
+
+APPENDIX A: GLOSSARY
+
+PURPOSE:
+  Chuẩn hóa toàn bộ thuật ngữ được sử dụng trong tài liệu
+
+TERM: Guest
+  DEFINE: Người chưa đăng nhập
+
+TERM: User
+  DEFINE: Người đã đăng nhập bằng Google
+
+TERM: Creator
+  DEFINE: User đã kích hoạt chế độ Creator và có quyền đăng Character
+
+TERM: Admin
+  DEFINE: Quản trị viên hệ thống
+
+TERM: Character
+  DEFINE: Nhân vật Roleplay được Creator đăng tải
+
+TERM: Prompt
+  DEFINE: Nội dung hướng dẫn AI thực hiện một nhiệm vụ
+
+TERM: Creator Profile
+  DEFINE: Trang cá nhân của Creator
+
+TERM: Feedback
+  DEFINE: Phản hồi gửi tới một User hoặc Creator
+  INCLUDE:
+    - Riêng tư
+    - Công khai
+
+TERM: Bookmark
+  DEFINE: Lưu Character hoặc Prompt vào bộ sưu tập cá nhân
+
+TERM: Follow
+  DEFINE: Theo dõi Creator
+
+TERM: Reaction
+  DEFINE: Biểu cảm như:
+    - Thích
+    - Tim
+    - Các biểu cảm khác
+
+TERM: Comment
+  DEFINE: Bình luận
+  SUPPORT: Reply
+
+TERM: Tag
+  DEFINE: Nhãn dùng để phân loại Character hoặc Prompt
+
+TERM: AI Search
+  DEFINE: Tìm kiếm theo ngữ nghĩa
+  NOTE: Không chỉ dựa trên từ khóa
+
+TERM: Pinned Character
+  DEFINE: Character được ghim lên đầu trang Creator
+  LIMIT: Tối đa 3
+
+TERM: Pinned Prompt
+  DEFINE: Prompt được ghim
+  LIMIT: Tối đa 1
+
+TERM: Soft Delete
+  DEFINE: Ẩn dữ liệu khỏi hệ thống nhưng không xóa vật lý khỏi cơ sở dữ liệu
+
+TERM: Audit Log
+  DEFINE: Nhật ký toàn bộ thao tác của Admin
+  NOTE: Không được chỉnh sửa
+
+TERM: Activity Log
+  DEFINE: Nhật ký hoạt động của User
+
+TERM: Notification
+  DEFINE: Thông báo trong hệ thống hoặc Email
+
+TERM: Business Rule
+  DEFINE: Quy tắc nghiệp vụ bắt buộc
+  NOTE: Không được AI tự thay đổi
+
+TERM: Acceptance Criteria
+  DEFINE: Tiêu chí bắt buộc để một chức năng được xem là hoàn thành
+
+TERM: Source of Truth
+  DEFINE: Nguồn dữ liệu chính thức
+  NOTE: Trong dự án này là toàn bộ Module 01–36
+END
+
+# ====================================================================
+
+APPENDIX B: BUSINESS RULES
+
+PRIORITY: Đây là tài liệu có độ ưu tiên rất cao
+REQUIRE: Toàn bộ Module phải tuân thủ
+
+ROLE:
+  Guest:
+    - Chỉ xem
+  User:
+    - Đăng Prompt
+  Creator:
+    - Đăng Character
+  Admin:
+    - Quản trị
+
+CHARACTER:
+  RULE:
+    - Chỉ Creator được đăng
+    - Không cần duyệt
+    - Creator được sửa
+    - Creator được xóa
+    - Creator được ghim tối đa 3
+
+PROMPT:
+  RULE:
+    - User và Creator đều được đăng
+    - Có Copy Count
+    - Có Bookmark
+
+FEEDBACK:
+  MODE:
+    - Riêng tư
+    - Công khai
+
+FOLLOW:
+  RULE: Chỉ Follow Creator
+  FORBIDDEN:
+    - Follow Character
+    - Follow Prompt
+
+BOOKMARK:
+  SUPPORT_ONLY:
+    - Character
+    - Prompt
+
+COMMENT:
+  SUPPORT:
+    - Reply
+    - Reaction
+    - Edit
+    - Delete
+
+TAG:
+  RULE: User được tạo Tag mới
+  LIMIT: Tên Tag tối đa 30 ký tự
+
+NOTIFICATION:
+  TRIGGER khi:
+    - Follow
+    - Character mới
+    - Prompt mới
+    - Feedback
+    - Bình luận
+    - Trả lời
+
+SEARCH:
+  RULE: AI Search phải hiểu ngữ nghĩa
+
+ADMIN:
+  ALLOW:
+    - Xóa
+    - Khóa
+    - Quản lý Report
+  FORBIDDEN: Không đọc Feedback riêng tư
+
+SECURITY:
+  - Đăng nhập Google
+  - CAPTCHA
+  - Activity Log
+  - Audit Log
+  - Rate Limit
+
+DATA:
+  FORBIDDEN:
+    - Không tự sinh dữ liệu giả
+    - Không tạo dữ liệu mẫu trong Production
+END
+
+# ====================================================================
+
+APPENDIX C: DATA LIMITS
+
+Character:
+  LIMIT: Tên — Tối đa 50 ký tự
+  LIMIT: Slogan — Tối đa 700 ký tự
+  LIMIT: Plot — Không giới hạn
+  LIMIT: Tag — Tối đa 6 Tag
+
+Prompt:
+  LIMIT: Tên — Không giới hạn
+
+Profile:
+  LIMIT: Display Name — Tối đa 50 ký tự
+  LIMIT: Bio — Tối đa 600 ký tự
+
+Avatar:
+  LIMIT: Dung lượng — Tối đa 10 MB
+  FORMAT:
+    - JPG
+    - JPEG
+    - PNG
+    - WEBP
+
+Tag:
+  LIMIT: Tên — Tối đa 30 ký tự
+
+Pinned:
+  LIMIT: Character — 3
+  LIMIT: Prompt — 1
+END
+
+# ====================================================================
+
+APPENDIX D: PRIORITY RULES
+
+IF: phát hiện xung đột giữa các Module
+  THEN: AI phải áp dụng theo PRIORITY ORDER:
+    1. Appendix B — Business Rules
+    2. Module 36 — Master Build Prompt
+    3. Module 30 — Global AI Implementation Specification
+    4. Module 01 → Module 29
+    5. Appendix A
+    6. Appendix C
+
+FORBIDDEN (AI KHÔNG ĐƯỢC):
+  - Tự thêm chức năng
+  - Tự bỏ chức năng
+  - Tự đổi Business Rule
+  - Tự đổi Database
+  - Tự đổi Permission
+
+IF: thiếu thông tin
+  THEN: AI phải sử dụng phương án triển khai phổ biến nhất trong phát triển web hiện đại và ghi rõ giả định được sử dụng, thay vì thay đổi các yêu cầu đã được xác định
+END
+
+# ====================================================================
+
+APPENDIX E: CHANGE LOG
+
+VARIABLE: Version = 1.0
+VARIABLE: Status = Draft
+
+VERSION 1.0:
+  - Hoàn thành Module 01–36
+  - Chuẩn hóa Business Rules
+  - Chuẩn hóa Data Limits
+  - Chuẩn hóa Glossary
+  - Chuẩn hóa Priority Rules
+
+UPDATE_RULE:
+  EACH edit phải ghi:
+    - Version
+    - Ngày cập nhật
+    - Module bị ảnh hưởng
+    - Nội dung thay đổi
+    - Người thực hiện
+
+EXAMPLE:
+  Version: 1.1
+  Updated: 2026-07-30
+  Affected Module: Module 05
+  Description: Điều chỉnh giới hạn Tag từ 5 lên 6
+  Author: Project Owner
